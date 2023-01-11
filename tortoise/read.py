@@ -19,22 +19,25 @@ if __name__ == '__main__':
     parser.add_argument('--preset', type=str, help='Which voice preset to use.', default='standard')
     parser.add_argument('--regenerate', type=str, help='Comma-separated list of clip numbers to re-generate, or nothing.', default=None)
     parser.add_argument('--candidates', type=int, help='How many output candidates to produce per-voice. Only the first candidate is actually used in the final product, the others can be used manually.', default=1)
+    parser.add_argument('--batch_size', type=int, help='Batch size to use.', default=32)
     parser.add_argument('--model_dir', type=str, help='Where to find pretrained model checkpoints. Tortoise automatically downloads these to .models, so this'
                                                       'should only be specified if you have custom checkpoints.', default=MODELS_DIR)
     parser.add_argument('--seed', type=int, help='Random seed which can be used to reproduce results.', default=None)
     parser.add_argument('--produce_debug_state', type=bool, help='Whether or not to produce debug_state.pth, which can aid in reproducing problems. Defaults to true.', default=True)
 
     args = parser.parse_args()
-    tts = TextToSpeech(models_dir=args.model_dir)
+    tts = TextToSpeech(models_dir=args.model_dir, autoregressive_batch_size=args.batch_size)
 
     outpath = args.output_path
+    textfile = args.textfile
+    filename = textfile.split('/')[-1].split('.')[0]
     selected_voices = args.voice.split(',')
     regenerate = args.regenerate
     if regenerate is not None:
         regenerate = [int(e) for e in regenerate.split(',')]
 
     # Process text
-    with open(args.textfile, 'r', encoding='utf-8') as f:
+    with open(textfile, 'r', encoding='utf-8') as f:
         text = ' '.join([l for l in f.readlines()])
     if '|' in text:
         print("Found the '|' character in your text, which I will use as a cue for where to split it up. If this was not"
@@ -45,7 +48,7 @@ if __name__ == '__main__':
 
     seed = int(time()) if args.seed is None else args.seed
     for selected_voice in selected_voices:
-        voice_outpath = os.path.join(outpath, selected_voice)
+        voice_outpath = os.path.join(outpath, selected_voice, filename)
         os.makedirs(voice_outpath, exist_ok=True)
 
         if '&' in selected_voice:
@@ -56,6 +59,7 @@ if __name__ == '__main__':
         voice_samples, conditioning_latents = load_voices(voice_sel)
         all_parts = []
         for j, text in enumerate(texts):
+            print(f'Generating clip {j}/{len(texts)}: {text}')
             if regenerate is not None and j not in regenerate:
                 all_parts.append(load_audio(os.path.join(voice_outpath, f'{j}.wav'), 24000))
                 continue
