@@ -7,6 +7,7 @@ def split_and_recombine_text(text, desired_length=200, max_length=300):
     text = re.sub(r'\n\n+', '\n', text)
     text = re.sub(r'\s+', ' ', text)
     text = re.sub(r'[“”]', '"', text)
+    text = re.sub(r'\[[0-9]+\]', '', text)
 
     rv = []
     in_quote = False
