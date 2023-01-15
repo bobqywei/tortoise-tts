@@ -1,0 +1,154 @@
+
+  I love looking for ways to screw up conventional wisdom. Right now in the entertainment world, the conventional
+  wisdom is that both sides on the HD DVD vs Blue Ray DVD will battle it out and a standard for HD on DVD will
+  emerge. No one is trying to rush to a compromise because the big media companies want to squeeze as much money
+  as they possibly can out the current DVD business cycle.
+Good. The longer it takes, the less chance any format of DVD has ofhaving a place in the future of home
+  entertainment. Don’t look now, but the price and size of hard drives have fallen like a rock, while capacities
+  have soared, with no slowdown in site. 
+Which leads to the question  What is the best way to distribute content? DVDs which will be limited in capacity
+  to 9.4gbs on a single DVD for another year, and then after that 50gbs on a single disk for years to come after that,
+  or rewritable media that can hold 2gb already in a device half the size of a pen, or in a hard drive that can hold
+  200GBs plus in a drive the size of your cell phone?
+Which device should content distributors like HDNet invest in ? DVD, knowing that the futurestandards will
+  be lockedfor 7 to 10 years, or these storage devices that will grow in capacity, and shrink in size and price,
+  not to mention the additional flexibility of being able to erase and rewrite the drives?
+It’s not a question being asked in many places, but it is something we are talking about at HDNet. The
+  choices we and others in the industry make can have a big impact on the future of your home entertainment.
+Personally, I like putting content on rewritable drives. Let me tell you about how I personally made the USB Flash
+  Drives work for me.
+I had a couple DVDs that I hadPURCHASED, that I hadn’t had the chance to watch. I had a couple 512mb Flash
+  Drives that I had bought specifically to test them out for video. I took the first movie, and using an encoder
+  with compression (not going to tell you which one, don’t want to play favorites), I encoded the movies at DVD quality
+  and saved the output onto each of the 512mb Flash Drives. I popped those tiny little puppies into my pockets and off
+  I went to the plane. Keys, some money and my keychain flash drives in one pocket, phone in the other. No hassle, no
+  fuss no muss.
+On the plane, I popped the first keychain drive into the USB Port. Got the ready signal, got prompted to open my
+  video player, and watched a nice movie right from the keychain drive. On the way home, did the same thing with the
+  other movie. I loved it. Far less space than DVDs. Could put them in my pocket instead of filling up my
+  briefcase. I immediately went out and bought a 1gb keychain drive so I could hold 2 movies on 1 drive, in addition to
+  my first 2 drives.
+After having such a great experience with putting my DVDs on the keychain drives, I decided to test HDNet content
+  in HD. The keychain drives, even the 1gb didn’t have enough capacity to hold a full movie, so I tried just some of
+  our promos. They were short enough that they would fit in 512mb, but long enough to let me see if it worked.
+I used a standard HDTV MPeg2 transport stream. The keychain drive wasn’t fast enough to allow me to pull the video
+  directly. I had to copy it to my hard drive on my laptop, where it played with no prob, as it should.
+SinceI was getting fired up about the possibility of putting HDNet content in a format that could be
+  transportable and work easily with MediaCenter PCs, and in the not to distant future, USB or FireWire enabled TVs,
+  PVRs and Setop boxes and even DVDs (yes,tvs withhard drives are right around the corner, and
+  yes,all yourCE devices with a future, will have storage and expansion ability),I decided to buy a
+  portable 20gbs USB 2.0 drive that was about half the size of a pack of cigarettes. Cost me 150 bucks. I also bought
+  an external 80gbs FireWire Drive for under 100 dollars. I loaded a full 2 hour movie on the cig sized
+  drive, and all the episodes I had of our HDNet Word Report.
+Connected to my laptop, the cig drive couldn’t quite keep up. It had a couplehiccups, but it was close. If I
+  had used any compression at all on it, no doubt it would have kept up no prob. After copying to my laptop hard drive,
+  it played no problem at all.
+I connected the 80gb firewire drive to my HP Media Center PC and to my PC, it was fast enough to play without any
+  problems. I loved it.
+I loved it, for a ton of reasons. Let me name a few.
+I know that the price per GBs of an external hard drive is now down under 50c. That price is going to fall
+  further.A lot further as capacities increase. This time next year we should be talking about 1TB (that’s
+  1,000GBS) drives at 25c per GB or less. The increased capacity means not only that I can stick more HDNet movies or
+  TV shows on a drive and sell them to consumers, but it also means that I can increase the quality of the picture
+  substantially.
+What few people realize is that when we shoot something in HD for HDNet, the quality we capture the
+  contentat is far, far better than the picture quality that you see on your HDTV. We have to compress it
+  to fit in the bandwidth defined by broadcast standards. That compression reduces the quality of the picture you see.
+  Your TV can handle the quality we capture it at, but we don’t have a way to get it to yourTV at that quality
+  level yet.
+Bigger cheaper hard drives gives HDNet the ability to use that additional storage to hold our contentin
+  uncompressed qualityand increase the picture quality that you can see on your TV. A bunch. We can take
+  advantage of new cameras to capture at better and better qualities, and of new compression schemes that approach
+  future camera capabilities, only because we have ever expanding storage. That’s something DVDs will never have. So by
+  delivering content on Hard Drives rather than DVDs, we will be able to continue to increase the picture quality for
+  years to come.
+The other cool part is that the video playback devices that will be in your home over the next couple years will
+  have the ability to connect via USB or Firewire to these drives. PVRs, Set top Boxes, Media Center PCs,even DVDs
+  designed to play today’s DVDs and whatever future DVD standard is settled on, all will have the ability to connect to
+  Hard Drives in some shape or fashion, or people wont buy them. There is going to be a big, big war to host your
+  content in your house. Whoever does it the best, provides the most flexibility, and expandability at the best price,
+  will win.
+Next on my reasons to love this approach to distribution is that it basically kills off the “Piracy is going to
+  kill us” threats from the big movie companies. Hard Drive storage is expanding far more quickly than upload or
+  download speeds to our homes. The ability to use that hard drive storage to increase the quality and file size of a
+  movie, makes it practically impossible to distribute it over the net. I have a question I always ask at speeches, and
+  have asked for the last several years. I ask if anyone in the room has ever downloaded or uploaded a movie or TV show
+  in HD quality to or from a P2P network. No one has ever raised their hand. That is in spite of the fact that HDTV has
+  been in the clear, over the air since 1998. EVERY SINGLE SHOW that has ever been broadcast over the air, and
+  continues to bebroadcast today,could be picked up and copied by any of quite a few different, now
+  under 200 dollar HD encode/decode cards and then put on the net. It hasn’t and won’t happen, because shipping around
+  18gbs per 2 hour movie isn’t going to be fast anytime soon. Make the file sizes bigger to accommodate better quality,
+  and forgettaboutit.
+When we get to TB hard drives for under 250 dollars, we will be able to fit 50 movies in HD quality on that drive.
+  More than ONE THOUSAND movies in DVD quality on that drive. The keychain drives will be able to hold an entire HD
+  movie and cost under 20 dollars. That same keychain drive I talked about earlier, in the next 2 years or so, will be
+  able to store a DVD and cost under 10 dollars. So which is the better way to deliver a movie or movies? On a DVD with
+  a boring, lifeless future, or hard drives?
+Once the prices of a keychain drive get to a couple bucks for storage enough for a DVD quality movie, then it will
+  be easy to distribute and sell to consumers.(Of course they will still be packaged in pain the ass plastic that
+  no normal person can open right when they buy it, but that’s another issue.) The question will be who other than
+  HDNet will be selling it that way. Will companies stick to DVDs because that’s the way they feel comfortable, or will
+  they support a new medium?
+That’s a little question. The bigger question, the Billion Dollar question is how to deliver content on or
+  to hard drives, regardless of size and capacity, in a way that consumers will enjoy it, and do it cost effectively
+  today?
+Realize, that whatever happens in the next couple years, that you won’t be able to buy the newest releases and the
+  biggest hits thisway. There is no major media company who is going to disrupt their DVD cash cow
+  totakea chance on a new business like this.The “if it ain’t broke, don’t fix it” mentally is
+  big. But again, that’s a good thing for entrepreneurs with content. While they hope it won’t break, we can be
+  out there trying to break it, and then they usually can’t fix it.
+So without the biggest hit movies, what is the best way to deliver content to homes and for travelers?
+We are looking at kiosks. Walk up to an airport kiosk, or a kiosk at a retail location. Pick the movies or shows
+  or music they have available, pay for it via credit card, and wait a couple minutes while the content is copies from
+  a server right there on the premises.
+We are looking atcustomizing it per user. Go online, pick the content you want. Pay for it, the next day
+  your hard drive with all the movies, shows, music, whatever, shows up on yourdoorstep. You plug it in
+  yourMediaCenter PC, your DVD, PVR, whatever, and watch, listen and play.
+There is also the Netflix rental approach thatcould work as well. Pay 100 bucks for the
+  first200gbsexternal drive. Pay us 20 bucks a month, and we send you a new drive with the new goodies, and
+  you send us back the one you just watched  Easy and breezy. Well, that is if consumers like working that way.
+Probably the best short term solution is to work with high end home theater installers. The best belong to CEDIA
+  (www.cedia.org). They are the folks that are most capable of integrating Media
+  Center PCs, Hard Drive based storage systems , HDTVs and all the media devices in your house. I can only guess that
+  they would have a field day selling hard drives full of HD quality or better movies to their high end customers who
+  want to truly enjoy their home theater systems.
+There are a lot of openended questions and challenges in this, but that’s what makes business fun.
+  What kind of devicewill be the content serverin the home? Who will sell it? How will content be
+  delivered, and by who? What will the pricing be? What will the business model be?
+A ton of questions. The good news is that none of the solutions involve goodole’ fashion DVDs, other than as
+  an interim solution. That means there is one hell of an opportunity out there for HDNet and others as long as
+  we can execute.
+I also wanted to add just a couple of comments, questions, remarks.
+1. Why haven’t the Media Center PC companies and the cable and satellite industry gotten together to put set top
+  box capability in mediacenter PCs? People who buy media center PCs, might want to use them as media centers, and
+  given that cable and satellite deliver the media, doesn’t it make sense to combine the two? It would cut
+  customer costs for all involved significantly.
+2. Why aren’t Media Center PCs promoting the fact that they can play HD files and shipping with Demo and samples
+  to show them off? All of them can. I just bought a new HP Media Center PC, and it didn’t come with squat to show off
+  what it can do. It works great, but I had to figure out all of its capabilities. A showcase would make it a far
+  better solution.
+3. The biggest decision facing HD cable and satellite distributors today is quality vs quantity. Right
+  now most are looking at using compression to squeeze more channels into the existing space they have rather than
+  squeeze a better picture into the same bandwidth that channels take today. The reason it’s a huge decision is
+  that once they decide to fit in more channels, they can’t go back. You can’t all the sudden decide you need
+  15mbs per channel to deliver a picture that compares to a competitor’s better pictureafter compressing down to
+  6or 8mbs per channel.
+4. In a world ofmultiple Terrabyedrives, is VOD a good business? One of the things I learnedat
+  broadcast.com is that whenyou give thousands of choices on demand, people go to the little things that they
+  couldn’t find anywhere else. Thesailing fan will choose the show about sailing over the
+  blockbustermovie because they can’t get the sailing show anywhere else. Or maybe theychoose both. The
+  problem is that when people all choose different things at the same time, its a huge bandwidth hog. Thousands of
+  choices, thousands of people using different movies, particularly when the expectation is for HD quality, and there
+  is a huge problem. The cost of delivery per movie if the system is used a lot is incredible. UnicastingDVD or
+  higher quality videois an incredibly inefficient business. (Unicasting is where there is one connection per
+  user to the movie being shown. Each user has to have his own bandwidth, they cant’ share streams) It’s why movie
+  delivery over the net will never be a big business.
+I know bandwidth on your own network is cheaper than the net, but when hard disk storage costs 25c per GB, and
+  falls fast from there, unicast won’t be the best way to go.
+The real solution for VOD is TIVO/PVR from the main office. PVR customers are becoming trained that when you
+  fill up the hard drive, you have to delete something to get something. Put some PVR software on the front end, and
+  allow users to pick from a menu of content that they can add. Then overnight, they are multicast the content ,
+  whether its via cable or satellite, it’s saved to the hard drive. If they watch it, they get billed for itand
+  everyone is happy, and distributors maximize their revenue per bit.
+Ok, I’m HD worn out  for now. Thanks for letting me core dump some of the things that have been on my mind re HD
+  and the future.

@@ -1,0 +1,205 @@
+
+  Typically when someone on TV talks about a team being young or old, they just take the average age of everyone the
+  roster. Which of course is a worthless number. If your youngs never play, your team is older than your average. If
+  the old guys never play, its younger than its average.
+To find out where all the teams stood, i went through and took the age of each player on dec 31st and multiplied
+  by the number of minutes they have played and calculated the weighted average age for each team.
+These charts are going to look confusing unless you are into numbers, but the numbers are interesting. The teams
+  are ordered from youngest weighted average age to oldest. All teams show the most used lineup in minutes, except for
+  the MAVs. I just picked a lineup but excluded numbers. Hey, this is competitive info …..
+
+ ATL “team 23.49 weighted age
+  ATL 1.00 131.08 minutes 57
+  appearances
+  Harrington Johnson
+  Lue Pachulia J.
+  Smith 24.20 years
+ CHI “team 24.48 weighted age
+  CHI -7.02 109.54 minutes 38 appearances
+  Chandler Duhon
+  Hinrich Nocioni
+  Sweetney 24.17 years
+ POR “team 24.96 weighted age
+  POR -13.40 172.98 minutes 58 appearances
+  Miles Monia
+  Przybilla Randolph Telfair
+  23.64 years
+(I used this lineup since it played so much more than the next most used)
+CHA “team 25.33 weighted age
+  CHA 3.93 157.97 minutes 60 appearances
+  Brezec Knight
+  Okafor Rush
+  Wallace 25.65 years
+ LAL “team 25.72 weighted age
+  LAL 10.63 216.09 minutes 74 appearances
+  Bryant Cook
+  Mihm Odom
+  Parker 25.93 years
+ MIL “team 25.91 weighted age
+  MIL -4.09 213.05 minutes 76 appearances
+  Bogut Ford
+  Magloire Redd
+  Simmons 24.68 years
+ BOS “team 25.98 weighted age
+  BOS 1.63 279.20 minutes 112 appearances
+  Blount Davis
+  LaFrentz Pierce
+  West 27.32 years
+ NOH “team 26.20 weighted age
+  NOH 0.25 263.95 minutes 80 appearances
+  Brown Mason
+  Paul Smith
+  West 26.15 years
+ UTA “team 26.25 weighted age
+  UTA 0.84 81.75 minutes 29 appearances
+  Giricek Kirilenko
+  McLeod Okur
+  Ostertag 27.79 years
+ TOR “team 26.30 weighted age
+  TOR -16.07 91.45 minutes 26 appearances
+  Araujo Bosh
+  Calderon James
+  Peterson 26.06 years
+  TOR 16.22 90.61 minutes 46 appearances
+  Bosh Calderon
+  James Peterson
+  Villanueva 25.25 years
+  (I showed both since the minutes were almost exactly the same)
+ NYK “team 26.42 weighted age
+  NYK -19.93 35.75 minutes 17 appearances
+Ariza Davis
+  Frye Marbury
+  Richardson 26.97 years
+  (*Knicks most used by minutes lineup had Matt Barnes, so I excluded it)
+ GSW “team 26.60 weighted age
+  GSW 0.01 389.30 minutes 111 appearances
+  Davis Dunleavy
+  Foyle Murphy
+  Richardson 26.69 years
+ ORL “team 26.68 weighted age
+  ORL -8.81 100.41 minutes 33 appearances
+  Battie Francis
+  Hill Howard
+  Stevenson 27.36 years
+  (i used the lineup with Grant Hill since he is back)
+ SEA “team 26.73 weighted age
+  SEA 6.79 175.39 minutes 67 appearances
+  Allen Collison
+  Evans Lewis
+  Ridnour 26.51 years
+ WAS “team 26.99 weighted age
+  WAS 3.03 162.62 minutes 49 appearances
+  Arenas Hayes
+  Haywood Jamison
+  Jeffries 25.62 years
+PHI “team 27.24 weighted age
+  PHI 5.57 286.85 minutes 109 appearances
+  Dalembert Iguodala Iverson
+  Korver Webber 26.95 years
+ DAL “team 27.54 weighted age
+  DAL 15.17 xxxx minutes xx appearances
+  Daniels Diop
+  Harris Howard
+  Nowitzki 24.99 years
+ LAC “team 27.74 weighted age
+  LAC 3.10 248.86 minutes 96 appearances
+  Brand Cassell
+  Kaman Mobley
+  Ross 28.32 years
+ CLE “team 27.78 weighted age
+  CLE 2.11 341.82 minutes 116 appearances
+  Gooden Hughes
+  Ilgauskas James
+  Snow 27.09 years
+ IND “team 27.79 weighted age
+  IND 9.77 169.28 minutes 70 appearances
+  Artest Croshere
+  Jackson O’Neal
+  Tinsley 27.92 years
+ MIN “team 28.02 weighted age
+  MIN 9.01 408.75 minutes 111 appearances
+  Garnett Hassell
+  Jaric Olowokandi Szczerbiak 28.65
+  years
+ DEN “team 28.04 weighted age
+  DEN 4.65 94.58 minutes 39 appearances
+  Anthony Camby
+  Lenard Martin
+  Miller 28.76 years
+ SAC “team 28.15 weighted age
+  SAC 9.98 508.58 minutes 177 appearances
+  Abdur-Rahim Bibby
+  Miller Stojakovic
+  Wells 28.85 years
+ MEM “team 28.61 weighted age
+  MEM 4.15 309.19 minutes 89 appearances
+  Battier Gasol E.
+  Jones Stoudamire Wright
+  29.90 years
+ DET “team 28.62 weighted age
+  DET 18.63 616.12 minutes 202 appearances
+  Billups Hamilton
+  Prince B. Wallace R. Wallace 29.12
+  years
+ PHO “team 28.79 weighted age
+  PHO 12.61 254.01 minutes 85 appearances
+  Bell Diaw
+  Marion Nash
+  Thomas 29.16 years
+ NJN “team 29.20 weighted age
+  NJN 12.43 315.84 minutes 98 appearances
+  Carter Collins
+  Jefferson Kidd
+  Krstic 27.35 years
+ MIA “team 29.39 weighted age
+  MIA 21.16 172.28 minutes 61 appearances
+  Haslem Mourning
+  Posey Wade
+  Williams 28.90 years
+ HOU “team 29.85 weighted age
+  HOU -2.97 97.47 minutes 21 appearances
+  Bowen Howard
+  McGrady Wesley
+  Yao 30.01 years
+ SAS “team 30.50 weighted age
+  SAS 0.37 192.76 minutes 69 appearances
+  Bowen Duncan
+  Finley Nesterovic
+  Parker 30.05 years
+  SAS 21.98 191.76 minutes 53 appearances
+  Bowen Duncan
+  Ginobili Nesterovic Parker
+  29.17 years
+  (I included both since the minutes were almost dead even)
+
+  And while Im at it, here is some more fun info
+1 Atlanta 160 lineups used
+   2 Boston 205 lineups used
+   3 Charlotte 304 lineups used
+   4 Chicago 218 lineups used
+   5 Cleveland 120 lineups used
+   6 Dallas 187 lineups used
+   7 Denver 214 lineups used
+   8 Detroit 86 lineups used
+   9 Golden State 176 lineups used
+   10 Houston 179 lineups used
+   11 Indiana 182 lineups used
+   12 LA Clippers 208 lineups used
+   13 LA Lakers 193 lineups used
+   14 Memphis 189 lineups used
+   15 Miami 162 lineups used
+   16 Milwaukee 164 lineups used
+   17 Minnesota 164 lineups used
+   18 New Jersey 176 lineups used
+   19 New Orleans 132 lineups used
+   20 New York 281 lineups used
+   21 Orlando 203 lineups used
+   22 Philadelphia 170 lineups used
+   23 Phoenix 133 lineups used
+   24 Portland 253 lineups used
+   25 Sacramento 122 lineups used
+   26 San Antonio 203 lineups used
+   27 Seattle 181 lineups used
+   28 Toronto 119 lineups used
+   29 Utah 230 lineups used
+   30 Washington 153 lineups used

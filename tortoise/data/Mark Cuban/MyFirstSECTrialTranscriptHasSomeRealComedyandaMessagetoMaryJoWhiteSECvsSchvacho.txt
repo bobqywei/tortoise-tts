@@ -1,0 +1,46 @@
+I couldn’t have asked for a better case to kick off loading SEC vs …. trial transcripts on this blog. But before I get into it, let me add some disclosures.
+I am not a lawyer. So take anything I say that might be construed as legal “advice” with pounds of salt.  I’m not attempting to give legal advice, but I do feel like i learned a thing or two in my almost 10 years of dealing with the SEC.
+My understanding of insider trading law is that in order for it to be insider trading, there must be some violation of trust. In other words, if someone walked up to you and said “Im the CEO of this public company and I’m about to make the biggest cash sale in the history of the company and we will blow away all wall street numbers and you should buy the stock”. That is without question material, non-public information. But if you trade on the information, is it insider trading ? The answer as best I understand the law is NO. It is not insider trading. Why ? Because the CEO did not ask you to keep the information confidential. Nor did he ask you not to trade on the information. You have no responsibility to him. You can trade and tell the world about his deal if you would like.
+The CEO may be in trouble for any number of reasons, but the person receiving the information will not be. Trading on insider information is not illegal. Nor is receiving insider information illegal.  It becomes illegal insider trading when you tell that CEO that you not only agree to keep that information to yourself, but you also agree not to trade on it (And for those of you keeping score at home, in my case the CEO never asked me to keep the information confidential. He sent me an email after we talked saying i was free to give information about the deal to anyone that i chose to, and that they were free to call the investment banker for the deal (who as a practice did not ask or require a confidentiality agreement) to get as much information about the deal as they wanted. The SEC chose to ignore these facts)
+In any event, I bring this up because NO ONE truly understands what is legal and what is not legal when it comes to insider trading. This SEC has made the conscious decision (a huge mistake IMHO) to regulate through litigation. IN other words, they love the confusion around insider trading laws. They realize that when you combine this legal confusion with the authority and unlimited resources of the SEC, it is incredibly easy for them to bully and intimidate individuals and companies into settling their cases. Which in turn creates the box scores that SEC attorneys use to get their next job. Of course none of this helps protect the markets or improves investor confidence in the markets or improves capital formation , but no one at the SEC seems to really care about these issues.
+But I digress.
+In this case, SEC vs Schvacho,  the SEC has no facts on their side. Not a single one. The judge says so and the SEC agrees.  What the SEC is trying to do, and again I caution that I am not a lawyer, is expand the definition of what constitutes a duty of trust under SEC 10b5-2.  In the crazy , convoluted world of the SEC , where adding confusion to insider trading laws is a good thing, in this case they want to be able to say that if you talk to a friend who works at a company and buy stock in that company, even if both parties say you never discussed business and both parties say under oath that no material , non public information was discussed, delivered or received, that both parties must be lying. They must have discussed material inside information  and that because they are good friends, that friendship creates a duty of trust. Which in turns means any trading was insider trading.
+That is what this case appears to be all about. (Securities lawyers , feel free to jump in and add your thoughts )
+So now lets get to the trial transcripts.  The SEC lawyers are Joshua Mayes and  Paul Kim .
+1. This is from the Judge (P4 L10) –“And I would note, as I said before, that it’s unfortunate that this issue has come up, and while Mary Jo White wants to try more cases, I hope that she impresses upon especially counsel in her agency that the goal here is for a just result and not just  for a result.”
+2. Then the judge had to explain how Federal Rules worked in his courtroom (Page 22/Line 24)
+Well, you are showing one page. The way that you do this under the Federal Rules, of course, is to have him identify that he testified under oath and that  that’s the transcript of his testimony —
+MR. MAYES: Yes, Your Honor.
+THE COURT: — rather than just showing him a page of it.
+MR. MAYES: Sure.
+THE COURT: While your staff is sorting this out,  can we go on to something else?
+And of course in every case there is SEC induced comedy. (Page 98)
+3. Here comes the comedy
+THE COURT: How about the Manpower CFO’s?
+And I will tell you, Mr. Kim, one more time you walk up and whisper something, I am going to nail you to your chair.
+MR. KIM: My apology, Your Honor. I should have asked for permission.
+MR. MAYES: I’m sorry?
+THE COURT: That’s what happens, because he’s not  listening to my question, he’s listening to you whispering in his ear.  Did anybody ever go to the Manpower CFO and ask him what time the call was or get his phone records?
+4. And finally, this is the SEC I’ve come to know and love in my dealings with them:(Page 100/line5)
+Q. So you believe it was a tax sale?
+A. Yes. It was getting later in the year and I was losing  money in it and I needed a write-off.
+Q. Mr. Schvacho, you said before that you hadn’t been  investing since 2008. So you didn’t have any trading profits  to take a loss against, did you?
+A. It doesn’t matter. I mean, if I’m losing money in the  stock, it’s still a loss that I can write off against other  income.
+THE COURT: That is true, isn’t it?
+MR. MAYES: I don’t know.
+THE COURT: Well, you should know if you are going to ask that question, because you said it was a loss to be offset against a trading gain.
+MR. MAYES: That was my understanding was that  capital losses got offset against capital gains.
+THE COURT: Can’t you have a capital gain other than a stock gain?
+MR. MAYES: That’s true, Your Honor.
+BY MR. MAYES:
+Q. Did you have any capital gains, Mr. —
+THE COURT: Look, I’m not going to help you with  your interrogation. But, young man, if you ever ask a  question and represent that it has to be a loss applied  against only a stock gain, you be very careful about the representations you are making to a witness or to me.
+MR. MAYES: I apologize, Your Honor. I understood  it to be a capital loss had to be offset against a capital  gain. That’s still how I understand it, Your Honor. Maybe  I misunderstood.
+THE COURT: Well, you need to be a little more  practiced in the law.  And I will tell you, that offends me, that you reach an assumption that’s consistent with your theory rather than eliciting information from which I can make a decision, not you.
+MR. MAYES: I apologize, Your Honor.
+I want to make one point before you get to the transcripts. I realize that its not just SEC lawyers that make mistakes and get heat from a judge. All trial lawyers Im sure have experienced the same . But I firmly believe that any lawyer working for a  US Government Agency must be held to a higher standard.  Whether civil or criminal,when a lawyer doesn’t do their homework, or wings it, or takes chances, or doesn’t care about justice, they risk the life, livelihood, reputation and more of the person(s) they are accusing. I can look back at the job Christian Schultz and Jan Folena did and appreciate the comedy because I won. Had I not won , then their actions and misdeeds would be a burden that I would have to live with, as would my family, for the rest of our lives. That is unfair. That is unjust. That is why I am posting these transcripts.
+I want everyone who does a search for anything related to these cases, lawyers or individuals to have a sense of what they may be facing.
+And I want the powers that be at the SEC to see that some of us are paying attention and recognize that there is nothing about this case that has anything to do with confidence, fairness or capital formation in or from equity markets. This is purely a self aggrandizement with the goal of expanding the number of cases they can try and increasing the  future earnings of SEC lawyers.
+You can read the actual transcripts attached below.
+part 1  Sec Vs Schvacho Nov 18th 
+part 2 201320131119schvacho

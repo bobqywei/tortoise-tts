@@ -1,0 +1,3 @@
+The primary criticism among the posts for Part 1 of this argument was that many sites were making more money that I had proposed paying them to leave the Google index (by disallowing google search in robots.txt)
+My mistake. I should have been much clearer. Those sites that are SEO arb plays, sites that act as landing pages and collect money from those clicking through to other sites, would not be considered as top sites worth paying to leave the index. 
+In fact, the best possible scenario for unseating Google, would be to do everything possible to make sure that landing sites remain in the Google index, while real content sites are reward for excluding themselves.

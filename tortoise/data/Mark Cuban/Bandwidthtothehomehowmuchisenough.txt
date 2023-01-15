@@ -1,0 +1,42 @@
+Its the trillion dollar question. Telcos and cable companies are retooling and/or rebuilding their networks to squeeze as much bandwidth as possible out of their plants. Satellite providers are looking at every
+alternative means of increasing banwidth to, and adding a return path from the home.
+None have achoice. There is no question that households will consume an ever increasing amount of bandwidth. The question is how much. What will peak simultaneous bandwidth consumption to the home be in the
+next 5 and 10 years ?
+Television, High Speed Data, Telephony, sharing home movies and pictures, remote backup and applications that havent been thought of will consume bandwidth. A lot of it. But lets break it down to get some minimum numbers.  Because if a provider cant hit minimums, they will have problems.
+First of all, lets start with Television since that’s a battleground that all providers are fighting on. The very near term future of television is high definition. A high definition stream is going to require a minimum
+of 8mbs per second on average. Thats a minimum. Now some people are trying to say that they can do high definition in far less bandwidth, they cant.
+Even with the best compression, lower bit rates fail the smell test. More importantly, because its easy to see the difference in picture quality as bit rates are reduced, viewers will complain about reduced picture quality, and picture quality will become a competitive element. That competition will keep bitrates at 8mbs, if not higher for
+sports and movies. So lets work with 8mbs.
+Today its difficult for people to imagine a High Def TV in every room, but within 10 years HDTVs will be ubiquitous. More importantly, over the next 5 years, the homes with a HDTV in every bedroom and the family room, with HDPVR with Terabyte drives centrally housed,or connected to each PVR will be the most important homes in the neighborhood.
+Why ? Because if the household can afford to be the first in the block to be an all HD household, they will be a household able to buy everything that the provider sells. They will also be the more technically sophisticated household, so they will be more likely to buy all the options for high speed data, in home wireless data and eventually media, online backup of PCs to a central location and anything else the provider can think of. These are the “whale” customers. The most profitable customers that always pay their bills and never churn off.
+So lets look at our customer, The Whales, and their 3 kids and see what services they use.
+First, each of the 3 kids has an LCD HDTV that operates both as a HDTV and a PC monitor. Their PC is of course connected to the net , and is also their stereo. It is not their TV PVR because of the hassles of cable card or lack of satellite PC connectivity for programming. Instead they have a provider installed HD PVR that shares a multi terabyte drive with their PC.
+The kids are collectors. They save every bit of music and internet content that catches their fancy on their hard drives. They used to use ITunes, but instead they use a freeware desktop that front ends Itunes and
+all the different broadband environments that have been created and presents it as a unified front. It of course strips out any and all commercials by identifying the tracking information that is part of the internet url or embedded in the content itself.
+When it comes to TV content, they use the same front end to programatically control the provided PVR. With the front end, they dont use season passes any more. They save networks. Everything on MTV. It gets saved to the PVR. Everything from HDNet and HDNet Movies, CBS, NBC, HBO, Showtime, ABC, TNT, ESPNs, they all just automatically get saved. They understand the concept of mutliple terabytes and at 8mbs a stream, they know they can save content to their hearts content and if they need more storage, they can delete something or just add more
+terabytes. Its cheap. So their PVRs have basically become network spiders pulling in content 24x7x365.
+Of course they cant watch it all, but so what. When something they want to watch in realtime is on, like an NBA game, they watch it. If they arent at home, they use the front end to re route it to their personal IP address
+that they bought their name-url for. At the mall during the game ? Just program the front end to send it to markcuban.pda. Never miss a minute, just watch it on my phone/PDA whatever at the mall. Of course, if all
+their buddies want to watch it, they have added their personal urls toa buddy list and its multicast to them all. Their own personal version of slingbox.
+But wait, there is more. Because they have collected everything on disk, they can use the front end to progam their own TV networks and share it from their goowy.com pages. A little MTV, a
+little ESPN, a little HDNet and boom, their own tV network. Of course, they can use redswoosh.net to insert  contextual commercials and even make a little money from it if anybody watchs. For fun, they program in some home videos and pictures from the party they went to last week, set to music of course
+None of this is far fetched. In fact, its likely. But back to the original question. What is the max amount of simultaneous bandwidth being consumed during a day ?
+3 Tuners bringing in 3 networks in bedroom 1 , one being watched, two being saved. Thats 24 mbs. Same thing going
+on in bedrooms2 and 3.Thats another 48mbs. thats 72mbs per sec and thats just the kids rooms.
+Of course mom is watching a day and date release on HDNet Movies in the living room while saving Desperate Housewives for the hubby to watch later. Thats another 16mbs. We are up to 88mbs and going strong !
+Dad is working on the collage of movies and pictures that he wants to give to the grandparents as a gift. So he is uploading and downloading digital pics and HDV files to and from the family storage site on
+box.net. He hates that the kids use so much bandwidth, but thank goodness he is able to finally buy the 100mbs package.
+When he is done with the collage, or at least after he makes some progress on it,he is going to plug in the
+portable hard drive he got from the satellite company to the USB 2.0 port on his 80″ plasma. Ever since they bought
+Netflix, he has subscribed to their movie service. They send him a hard drivefull of hundreds of movies that
+Netflix customizes to his tastes, he loves murder mysteries. He watches as many as he wants to/canand
+whenhe is done, he sends it back and gets another disk with the genre ofhis choice. His only
+complaint is that they wont split genres on a disk, so he cant order half chick flicks for the wife, which of course
+creates problems from time to time.
+But it works itself out. There is enough bandwidth, and enough TVs to go around and every Sunday they look forward
+to the family tradition of going to the movies together.
+So there you have it. My over simplified vision of the bandwidth and technology consumption of a family of the
+future. Not necessarily your typical family, but one of the millions of upper income families that every provider
+will do whatever it takes to make happy. Which they just might….
+If they offer more than 100mbs of bandwidth.
+m

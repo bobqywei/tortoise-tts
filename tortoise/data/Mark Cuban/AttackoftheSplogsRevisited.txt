@@ -1,0 +1,11 @@
+I was reading Steve Rubels wonderful MicroPersuasion blog today. In it he lamented thatother blogswere stealing his content. Steve, those arent blogs. They are splogs. They just happen to be pretty.
+Some interesting points worth discussing.
+In the “we arent mainstream media” counter culture world that so often we bloggers try to cultivate, are wehypocritical if we call out someone for stealing our work ? One of Steve’s comments points out that if you live by a Creative Commons license, you have to take the good and the bad. The license says “
+You are free:
+Which leads to the question….. Is “You” in the license, the same as “It”. In other words, does the license convey to an individual the right to use an automated program to repackage and redistirbute with attribution?
+Steve of course has the option of adding the Non Commercial option to the license he offers, which in turn should prevent Splogs from stealing his content.
+However, there is an even simpler mechanism. The think about splogs, even the pretty ones, is that if the blog search engines like Icerocket.com do their jobs, then the splogs arent there. Which means they arent found.If a splog is hosted on a server, but no one sees it, does it exist ?
+Fortunately, the two sites that Steve cites were not in the icerocket.com index.
+At icerocket.com , we define a splog as any hosted website that only uses redirected or copied content and doesnt add any unique value. Aggregation is not value add. Why ? Because a search on any blog engine should uncover the unique content on their original source. If a blog isnt updated by human hands, we dont want it in our index.
+If you find, as Steve did, that a site is stealing your content, feel free to email me, blake or go to blakes blog and let us know. We will check it out and remove it if it doesnt meet our standards.
+And while you are at it, feel free to check out some very cool features that we have added to icerocket that blake details in his latest entry

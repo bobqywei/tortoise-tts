@@ -1,0 +1,9 @@
+Just a brief update to try to explain what some commenters dont seem to understand.
+1. the only thing that cable companies, and satellite for that matter have to sell is bandwidth and the applications they can run on that bandwith. More bandwidth means more digital everything.
+2. For Basic Cable subscribers that get say, 40 analog channels, they are consuming 40 x 38.6mbs or 1.54 Gbs. Let that sink in. 1.54 Gbs of bandwidth. Compare that to how fast your internet access is. That more bandwidth than your entire neighborhood consumes online , by a lot.
+Thats also the equivalent of 500 standard def digital channels.  If you convert that to revenue per bit for cable companies, or cost per bit for basic cable consumers,  the basic cable customers are getting the best deal in town. By a long shot.
+Digital cable customers, not so much. Digital customers are paying multiples of analog customers for bandwidth.
+In reality, analog customers are getting an amazing deal, and the cable companies have been hesitant to convert them only because of the potential FCC backlash.
+I’m as cynical as the next guy when it comes to cable rates and motivations, but the reality is that the longer analog remains, the fewer opportunities to leverage the freed up bandwidth to create next generation bandwidth hog applications.
+Will the cable companies charge us an a lot for that bandwidth, probably. But when we start to see applications built on top of 250mbs per second and more, it will have far more value to society than watching USA Network on your old analog TV
+And Net Neutrality ? Well if everyone had that 1.54gbs available to them, net neutrality would be a non issue. We wouldnt be arguing about access or pre emption, we would be arguing about quality of service

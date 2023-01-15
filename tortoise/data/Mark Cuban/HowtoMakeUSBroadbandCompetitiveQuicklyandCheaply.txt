@@ -1,0 +1,10 @@
+There is a dirty little secret in the cable industry.  Its being kept secret not by the cable distributors, but by the big cable networks.  End this practice and the United States goes from being 3rd world by international broadband standards, to top of the charts and exemplary.
+Make this change and Net Neutrality becomes a non issue. There is plenty of bandwidth for everyone.  
+What is the dirty little secret ? 
+That your cable company still delivers basic cable networks in analog. Why is this such an important issue  ? Because each of those cable networks takes up 6mhz. That translates into about 38mbs per second.  Thats 38mbs PER NETWORK.
+USA Network, 38mbs. ESPN, 38mbs. MTV 38mbs. VH1 38mbs.etc, etc, etc.
+If we want to truly change the course of broadband in this country, the solution is simple. Just as we had an analog shutdown date for over the air TV signals, we need the same resolution for analog delivered cable networks. 
+Transition basic cable networks from analog to digital over the next 3 years and all of the sudden there will be hundreds of megabits available on the smallest cable systems and more than a gigabit of bandwidth available on the largest.
+Of course the cable networks themselves would fight this. It could reduce their subscriber counts. God forbid that USA Network and other basic cable nets do not  reach every household that doesn’t have a digital set top box. That is of course far more important than the upside to our entire country that plentiful bandwidth creates. Right ?
+So for all of you netizens out there, drop all the Net Neutrality efforts and focus on pushing analog cable networks to digital and you kill two birds with one stone. You eliminate any issue of Net Neutrality with bandwidth a plenty, and you immediately make our nation bandwidth competitive with every nation in the world. In fact, done right, we become the envy of every nation in the world. All without a single backhoe or blade of grass in a yard harmed.
+I might even have to change my stance on internet video reaching broadcast quality !

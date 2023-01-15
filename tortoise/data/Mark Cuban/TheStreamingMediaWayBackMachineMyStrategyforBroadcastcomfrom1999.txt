@@ -1,0 +1,35 @@
+Found this as I was cleaning up some backups from almost 15 years ago.  THought it would be interesting to let people see what my goals were for our merger with Yahoo back then.
+June 18th 1999
+General Strategic Issues:
+Historically we have built value by adding content, expanding our network, building new business products, whether biz svc or advertising, before anyone else.  Because we were first for all of these , we had a huge advantage and there was not a significant cost beyond hardware , people and bandwidth to accomplish these.
+I think we are getting past this stage, as an industry. I think we can expect that people will look at throwing money at content providers in order to try to play catch up. In order to still be attractive to all of our partners, biz svcs, advertising, and content, we must find new ways of adding value. That new way is via proprietary software
+We have always said that software would be the last thing we added . We have taken this tact because there were so many other variables that were still evolving. From software being re-genned every 3 months from MicroSoft and Real Networks, the network, and learning what we can sell and what customers wanted to buy. We have reached the point now where our key value adds and differentiation have to come from software we produce in house.
+We have to be able to demonstrate to our partners that our 4 years of experience have given us the base upon which to build applications that create unique opportunities . Our competition is falling into a trap thinking that internet based radio is a key offering. The real key offering is monetizing all digital offerings, regardless of whether its audio/video/flash or  ? on the outside and pushing down costs so that everything we do can happen in a lights out , no touch environment driven by software.
+My feeling is that going forward , our biggest challenges will be
+1. ability to monitor usage and enforce limits in real time
+7.  Quality Control reporting
+One thing we don’t do, that would be a marketing goldmine, is to  track the quality of our user connections. It would be very simple. All of our servers report the number packets, delivered/lost and buffering. We should be using this information in real time to show our users and our customers the confidence we have in our systems and how they are actually better.
+a. User will have the option to download to their choice of devices if the content is eligible and they have paid for the right
+Bottom line is any content available to any user, with any other content interwoven inside of it., with complete user selectability and every click tracking and user identification
+The key to 99% margins in this business is the ability to allow corporate users to schedule , produce and broadcast their own audio/video based events, and to allow them to create and manage their own Programming guides , quickly and easily. This requires a very easy to use system, comparable to audio teleconferencing systems, with additional integrated Portal Style Programming Guides and complete backend reporting and billing.
+There are some packages that do this, Vstream, some TelSoft apps. I would prefer to see us buy before build if the price is reasonable and focus on adding video to the app.ication rather than trying to start from scratch
+First step is to hire a project manager who is an experienced programmer, preferably from the video teleconferencing industry
+We need this to spec out and define roles and manage to completion.
+We also need programmers dedicated to this application and its maintenance
+MetaData Search Tool
+Internet TV Stations
+User programmed
+Pre programmed
+Download with copyright protection
+Subscription Service
+Custom Player
+User Created Broadcast Network
+Getting Wide via Content acquisition
+Broadband video acquisition centers on the network
+Digital TV Broadband bandwidth
+CNBC Killer
+CNN killer
+Political TV/Pres Debates
+Movies with Trimark
+Quality Control of user streams – integration to routers
+Active Directory Integration of files and users into 2 directories

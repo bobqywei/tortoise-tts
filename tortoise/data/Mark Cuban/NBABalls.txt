@@ -1,0 +1,81 @@
+I asked the University of Texas at Arlington Physics department to take a look at both the new and old NBA basketballs. I asked them to compare the 2 and let me know what they thought. No preconceived notions. No prejudice. Just science.
+Below is their data and response. Before you get to it, i wanted to give my conclusions.
+1. Keep the ball. Its not perfect, but it would create more hassles than it solves to change.2. Check every floor in the NBA for “dead spots” and make sure the floors are consistent. This ball will be more impacted by soft spots on the floor.3. Rather than waiting to see how moisture impacts play and if it creates turnovers, recognize the properties and advantages of the ball, that it is the same regardless of how old or new, and change out the balls at halftime, at the end of quarters, or when it gets wet. Just like they do in baseball and football.4. The balls retain dirt. Lots of it. By the end of a game or two, the nets look like there have geen kids throwing dirt at them. We need to find a way to keep the balls clean and let every team know so if a fan touches one after a game they dont get grossed out. Changing the balls can help alleviate this problem.5. AFter this season, look at the embossing and layout on the ball and see if there is a better option. This will make the new ball bounce “true” when compared to the old ball.
+Here is the report and a big THANK YOU to UTA and all the hard work they did. They are a first class program and did a wonderfully thorough job
+October 26, 2006: MavBalls  Investigation
+ 
+ 
+Executive Summary:
+ 
+Thus far, over the period October 14-present, through  various tests, we have determined four major performance differences between the  old leather balls and the new synthetic balls provided to us by the Dallas  Mavericks organization.  It should be noted that the leather balls provided were  not new, but rather had been used for extended periods, whereas the synthetic  balls provided were brand new.
+ 
+(1) The two types of balls have different heights of  return bounce when inflated to the same pressures and dropped from identical  heights.  The new synthetic balls display measurably reduced return height than  the leather balls – about 5% less on average, when dropped from about four  feet.  Our compression measurements also indicate differences in elasticity.   The difference in bounce heights may translate to effects on players’ reactions  and handling in terms of dribbling, passing, rebounding off the backboard,  bouncing off the rim, etc.
+ 
+(2) The surface of the synthetic balls display a factor  of two higher coefficient of static friction when both leather and synthetic  balls are dry.  This characteristic would make the synthetic balls easier to  grip (stickier) than the leather balls, when dry.
+ 
+(3) However, with a few drops of added moisture on the  surface of each type of ball, the new synthetic balls have a coefficient of  friction which is at least 30% smaller than similarly moistened leather balls.   We have also measured the moisture absorption rate, which confirms that the  synthetic ball absorbs moisture at a much slower rate, leaving more of the  moisture on the surface. Therefore, when wet, the synthethic balls are much  harder to grip and handle (slippery).  By contrast, our measurements indicate  that the grip of the leather ball improves after similar  moistening.
+ 
+(4) The synthetic balls bounce more erratically (i.e.,  at a wider range of angles) off floors.  Preliminary measurements suggest about  30% greater deviation in the position of the synthetic ball after a bounce.   More tests are scheduled to quantify this precisely.
+ 
+All the above conclusions should be considered  preliminary and subject to revision since we are still actively  testing.
+ 
+ 
+Details of Measurements:
+ 
+(1) We have measured the size and weight of the two  types of balls – they are essentially identical in these base characteristics  (less than 1% difference). The conditioned leather balls and synthetic balls  have similar patterns on the surface.  However, prior to use/conditioning, the  leather balls display a spherical appearance to the “pebbling” — instead of the  flatter apperance seen in conditioned leather balls and synthetic  balls.
+ 
+(2) Tests have shown that the synthetic ball bounces  back
+lower by 5-8% when dropped from a height of little over  four feet, depending on the hardness of the floor.  Specifically, for a hard  linoleum floor with concrete underneath, the leather ball bounced back an  average distance of 2.2 inches higher compared to the synthetic ball, when  dropped from a height of 4 feet 3.7 inches.  The coefficient of restitution is  0.81 for the leather ball at this height, increasing monotonically to 0.85 for  successive bounces till they reach approximately one third of the drop height.   The coefficient of restitution for the synthetic ball was 0.79-0.84 over the  same range of heights.  The difference in bounce was more pronounced (increasing  to 4 inches) on softer, more pliant floors.
+ 
+(3) In order to compensate for the difference in bounce,  we re-tested the basketballs by overinflating the synthetic balls.  The  synthetic ball had the same bounce characteristic as a conditioned leather ball  when overinflated to 14 psi (the required overinfl
+ation depends on the hardness  of the floor). The leather ball was inflated to the recommended pressure of 8.5  psi for comparison.
+ 
+(4) The bounce test was repeated with a new  (unconditioned) leather ball.  We found that the unconditioned leather ball had  similar coefficient of restitution to the synthetic ball at same inflation —  that is, both bounced back essentially to the same height.  We conclude that the  conditioning of leather balls increases their bounce.  However, thus far, we  have not attempted to condition our new leather ball and repeat the  tests.
+ 
+(5) The synthetic balls absorb water at a much slower  rate, averaging 8.6 grams per minute.  The conditioned leather balls will absorb  water more rapidly, about 70 grams within a minute.  After quasi-saturation at  these water masses, the leather balls absorb water at a much slower rate than  the synthetic balls, averaging 3.3 grams per minute.
+ 
+(6) We have performed compression tests of all the  balls. The data is being analyzed.  Qualitatively, we find that the leather  balls compress more easily under the same load, compared to the synthetic  balls.  The compression is linear over reasonable range of forces; we are in the  process of quantitatively determining the elasticity.
+ 
+(7) Initial friction tests show a much higher  coefficient of friction for the synthetic ball when dry.  The coefficient of  friction between the surface of the synthetic ball and a silicon surface  (medical literature shows silicon to have a friction coefficient similar to the  human palm) is about 3.2, for our experimental setup.  The friction coefficient  is 1.69 for the leather ball, using the same procedure.
+ 
+(8) Friction tests with liquids such as Visine (which  has viscosity higher than water, similar to human tear drop, possibly closer to  sweat) applied to the silicon (one drop per 2″x2″ area) show that the  coefficient of friction increases for the leather ball.  After repeated  application of drops, the coefficient increased gradually by at least 30% for  the leather ball, thereby making it more “gripable”.  After quasi-saturation.  adding drops reduced the coefficient by 20%, relative to a dry ball.  However,  for the synthetic ball, the coefficient of friction reduces immediately by 55%  with the first drop of liquid.  A larger reduction is seen with repeated  application of liquid.  In conclusion, the wet synthetic ball is significantly  more slippery compared to wet leather balls.
+ 
+(9) During our bounce tests, we observed that the  synthetic ball bounced more erratically compared to the leather ball.  Preliminary data shows an average horizontal deviation (near the apex after the  bounce) of 15 mm for the leather ball, and 22 mm for the synthetic ball, after  bouncing off the floor. Examination of the surface characteristics of the  synthetic ball showed that more than 20% of the surface is embossed with text  and logos to a depth of a few millimeters.  We speculate that the more uneven  surface of the strongly embossed synthetic balls is the principal cause for the  erratic bounces in our tests.  The surface of the leather ball is far more  consistently spherical and even.  We are continuing to improve these  measurements.
+ 
+ 
+Future tests:
+ 
+(a) Continuing studies of friction to quantify the loss  of
+grip when the synthetic ball is wet.
+ 
+(b) Wind tunnel test of aerodynamic drag is scheduled  for
+later this week.
+ 
+(c) Futher quantitative measurement of erratic bounce is  scheduled for next week.
+ 
+(d) Repeat the bounce test (coefficient of restitution)  at the American Airlines Center, if possible.
+ 
+(e) All other tests are being repeated or redone  with
+increased precision.
+ 
+ 
+Preliminary recommendations:
+ 
+Based on our measurements so far, we would recommend  that the embossing of the synthetic ball should be discontinued, to reduce  erratic bounces.  The material of the synthetic ball should be made more  moisture absorbent, to increase friction and associated “gripability” when the  surface is wet. The thickness of the rubber backing could be reduced to increase  bounce.  These relatively minor changes in manufacturing, it seems to us, would  meet the dual needs of a more uniform low maintenance ball desired by the league  with the performance characteristics approximating those which the players are  accustomed to and prefer.
+ 
+ 
+General comments about our  measurements:
+ 
+All tests were done with the balls inflated at 8 or 8.5  lbs. For comparisons shown above, old and new balls had the same inflation.   Every measurement has been or will be repeated multiple times.  We will include  an estimate of errors in the next report.  We used the following sample of balls  for our studies: three conditioned leather balls provided by  the
+Dallas Mavericks, three new synthetic balls provided by  the Dallas Mavericks, two new (not conditioned) official NBA leather balls  purchased by us, and one new official NBA synthetic ball purchased by us. At  this stage, please note that all measurements should be considered  preliminary.
+ 
+ 
+Kaushik De and Jim Horwitz
+and the UT Arlington MavBalls Team
+Department of Physics
+The University of Texas at Arlington
+ 
+ 
+ 
+ 
+ 

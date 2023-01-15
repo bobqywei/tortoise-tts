@@ -1,0 +1,26 @@
+I was perusing my Icerocket RSS feed on my name. (Got to see who is saying what about me right :). Lo and behold, there was an article on click fraudsaying that it was lower than some, namely me and Henry Blodgett had predicted, from former Alta Vista-ite and current Microsoftie Don Dodge.
+I have never given click fraud estimates, but I did say on CNBC that I thought it was the great unknown in the Pay Per Click universe. Despite proclamations to the contrary, we dont know what percent of advertising revenue is consumed by fraud.
+Don referred to the Click Fraud Index. This index is provided by an analytics company which provides software to advertisers to help them determine how much they are getting hit by clickfraud.
+The index suggests that 14pct of clicks are fraudulent. On their website, they make the point that this percentage converts into a very meaningful $750mm in fraud this year. All very interesting.
+More importantly, Don defined clickfraud as companies clicking on their competitors ads or robots or clickfarms rolling up fraudulent clicks. Both of which are definitely fraud.
+Personally, I think click fraud goes much further than these two examples so I responded to Don with
+
+“CLICK fraud goes far beyond click farms, robots and competitors.
+Its the new monthly allowance for I dont know how many college and high school kids. Take a look at this splog (spam blog) http://blogger3.com/users/nba-ticket/article/113845/
+MILLIONS of these are created EVERY day. Showing up in search results trolling for clicks through adsense. Not click fraud by your definition, but all pages created purely to draw clicks. Not what the advertisers had in mind Im sure, being on a spam page.
+or this is popular, telling people to help out by clicking on the ads http://blog.myspace.com/explorers_of_the_unknown
+or http://www.icerocket.com/search?tab=myspace&q=ads+by+goo…
+for more info.”
+Don responded by saying that he didnt think my examples were click fraud since a “human was led to click by content”. Fair point, but it leads to the bigger question.
+What is click fraud ?
+Im going to offer my definition and let everyone else chime in as well in comments.
+In addition to the examples Don gives and I agree with, robots, farms, paid clickers and competitive budget sabotage, Click Fraud is very simply:
+A clickby a system or person on a page designed to circumvent the advertisers intent. In otherwords, advertisers are spending their money in order to get results. They have directed money to PPC advertising to get click throughs from their intended audience, to their intended destination.
+If a kid on myspace says “click on the ads” to help me pay for XYZ, and they do, thats click fraud.
+If an ad shows up on a splog and the advertisers doesnt want their ads on splogs. Thats click fraud.
+If an ad shows up on a parked domain and the advertiser doesnt want their ads on parked domains. Thats click fraud.
+If an ad shows up on a page thats part of an arbitrage scheme (buy clicks from a cheap PPC company, sell them using a more expensive PPC provider), thats click fraud.
+The controls available from Yahoo, Google and others to advertisers are improving all the time. Yes, advertisers have the choice of only being on search engine results, or being on specific content site. But the reality is, more often than not the click volume is either not high or the cost of granularity is very high, so the advertiser chooses what could be called the Run of Schedule approach, trusting the ad provider to put their ads on legitimate sites.
+Some may feel that Im over reaching in the definition, I dont.
+The net is supposed to be an improvement over the old saying “i know half of my advertising is working, i just dont know which half”, not an extension.
+The concept of “I know some percentage of my PPC advertising is click fraud, I just dont know home much” shouldnt be acceptable.

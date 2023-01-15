@@ -1,0 +1,10 @@
+There is a lot of talk these days in the blogosphere about the need for lists of blogs. People seem to want a starting point in order to find their ways to what current lists are basically saying are the most popular blogs.
+The problem with the lists I have seen is that they are far from being the most popular. This isn’t a personal preference issue, its a criteria issue. Right now all the “most popular lists” appear to do their ranking based off of number of links. If 2,500 blogs that are indexed by the engine are linked to blogmaverick.com, then this blog would rank where ever that falls.
+Of course the first nitpick is that most people don’t reference to blogs purely by URL or even name. More often its a link to Cubans Blog, or Steve Rubel or Jeff Jarvis, or Jason’s blog. But the bigger question is this, if a blog that no one sees links to your blog, does that make your blog more popular?
+Of course not, it just means that one person (at least we hope its a person and not splog) knows about your blog and has offered a link.
+The true test of popularity, if that is what we are trying to capture, is in how many people at least go to the blog, and from there hopefully read it.
+Which leads to what we are evaluating doing at IceRocket.com
+We have feature called linktracker. What linktracker does is count the number of people, in realtime, who have linked to a given post on your blog. We are working on updating this citation, so that it also can count the number of people who have actually viewed the given blog post.
+We aren’t there yetin making this fast enough to give back your relative ranking in terms of actual number of readers, but we are making progress. We are also considering adding code to allow you to pick a category that you want to be ranked in to the code…ie, Personal Diary, Politics, Entertainment, whatever.
+So, if you would like to stand up and be counted, take a look at the code required by linktrackerand feel free to add it.
+We would also love to get your feedback and ideas on how we should implement this feature and how we should present our IceRocket.com List

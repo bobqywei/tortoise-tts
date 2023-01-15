@@ -1,0 +1,16 @@
+Back in the day. About 2000 to be somewhat precise, the biggest day part for listening to audio or watching video online was from 11am to 4pm for each time zone. In otherwords, more people went to broadcast.com for audio and video during work hours than any other part of the day.
+I was curious if this had changed at all. 
+My guess was that it had changed some. That the biggest change in habit was people getting online after dinner in order to check their email and while they were there, hunt down links that people had sent them, read blogs, search for stuff, watch video. Basically random stuff that killed time.
+I was also curious to see if online video had yet become “TV”. Were people using it as a primary entertainment source ? As an alternative to TV ?. Given that time spent watching TV per household was up in 2006 over 2005, I didnt expect that they were, but I wanted to find out.
+So i turned to the very fine folks over at Comscore.com. Andrew Lipsman and Jonathan Freedman are the experts in researching these types of online issues and they came through with flying colors. Less than 48 hour turnaround for a breakdown for home and office viewing by daypart.
+As it turns out, based on data for January of 2007, the more things change, the more they stay the same.
+When do more people watch online video than any other time ? From 10am to 5pm, mon to fri. Thats when 30pct of all online video viewing takes place. If you want to go a little earlier, for those that get to work early, add another 7pct. So that 37pct of all online viewing activity takes place from 7am to 5pm. Or put another way, about 50pct of all video viewing during WEEKDAYS (as opposed to 37pct for the entire week) happens from 7am to 5pm. Thats a big number.
+The next biggest viewing activity came just as I expected, after work hours. From 5pm to 8pm is when 14pct of all online viewing activity takes place. 
+What percentage of people watch video on the internet during some part of the prime time TV hours during the week ?
+12pct. On the weekends, that falls to 6pct.  
+At this point some might expect the argument about the impact, lack there of, or growing adoption trends, or whatever else could be extrapolated from this. Not me. 
+Content owners , particularly those serving content from their own websites, or getting reports from vendors serving video for them already are seeing these trends. They know when their content is most watched. 
+Which is exactly why the big networks are streaming full TV shows. They know that most people watch them at work or at home during the weekday. When it has minimal impact on their viewership and ad sales. If they were really smart, they would turn off the streams in the evenings.
+I think some smart videohosting company is going to create a licensing agreement that allows the content owner not only to share revenues, but to determine what time videos can or can not be watched. Some smart advertising sales force is going to price their advertising around video based on the day part as well.
+All the stuff we were doing at broadcast.com in 2000. The more things change, the more they stay the same.
+

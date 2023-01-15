@@ -1,0 +1,99 @@
+Sometimes I wish i could just sit down and chill. But I cant. Unless my daughter and wife are around, I wont even
+try. My wife would tell you that even then…
+ Its just not my style.
+ So every day I work, read and wonder. What about this. What about that.
+ Here are some of the things Im curious why no one has tried yet.
+ 
+ 1. Why dont newspapers offer PPC for display ads ?
+ I dont know what the marginal cost to print a page of a newspaper is. I dont know if it varies by section of the paper
+or even if there is a variable cost based on who is writing on those pages.
+ I dont know how that translates into CPM. My best guess is that there is a nice little arbitrage between the cost per
+additional page and doing PPC display ads.
+ Why not allow advertisers to automate the placement of display ads ?
+ Why not just let me upload my pdf or gif file that i want to place as my ad ?
+ Why not include a system generated and monitored URL that can track page views of that URL (the equivalent of a
+clicked through page)
+ Why not charge me based on the number of page views ?
+ Why not rank positions on the page, just like Search engines do, and make me bid higher to get the better
+position.
+ Why not let me bid the same way for size of ad. The higher I bid per page view relative to other bidders, and as long
+as its above the set minimum, why not size and position my ad accordingly ?
+ Why not let me bid differently for different sections of the newspaper. Sports, Entertainment, Section A, B,
+etc.
+ Of course, all the above could apply to the ads appearing on the paper website as well
+ Advertisers would have a choice. They could lock in their positioning and pricing, just like they do now. Or, they
+could take the PP Page View route and only pay for the traffic generated to their websites. (which could end up costing
+more in many cases).
+ The model could also be enhanced to direct traffic to a virtual phone number for the company. Create an extension on
+the advertisers current phone system, or a unique number that is routed to the company that can be tracked and audited
+. The advertiser would then pay per call.
+ There would be minimum bids. There would be a reserve amount per page. If enough ads at the right price were not
+received, the page wouldnt be printed. The offering could enable different ads and pricing based on where in the paper
+it would be printed.
+ Of course the ads could also appear on the company website as part of the program or offered seperately.
+ Its basically PPC for the newspaper world.
+ What makes it particularly interesting to me is that its the right product at the right time. Search engines are
+working hard to localize their search . By definition, the local newspaper is just that. Local. So newspapers could
+actually take a quick step ahead of the online world.
+ Local. Graphical.
+ And you are reaching consumers where online cant… At least I know a newspaper is far more prevalent where i read
+it in the morning than my PC or Sidekick.
+
+ Maybe its a stupid idea. I dont know. But it sure seams like it should and would work with a little elbow grease
+behind it.
+ Here is my 2nd idea
+
+ Again geared towards the topic of local. Why dont cable and telcos differentiate between local bandwidth and internet
+bandwidth.
+ Bandwidth is far more cheap and available on a private network than it is on a public network.
+ In my house, my wireless hums at 54mbs. My wired hums at 100 and it would be cheap to upgrade to 1gbs
+ On the cable and telco networks, the same thing happens. Inside the nodes in every neighborhood, the amount of
+bandwidth , particularly in the newer installed networks is huge.
+ The amount of bandwidth available becomes constrained when networks link to the outside nets and the internet.
+ With the cost of 1gbs and even 10gbs networking equipment haven fallen so far, its not inconceivable that a
+minimum of 100mbs could be offered per home for local for local network access.
+ In other words, there is nothing that should prevent 2 houses on the same network on the same street from being
+able to communicate at 100mbs or more. And there is no reason to stop at houses on the same street. It could be a
+neighborhood, town, city, just depending on how the network is designed and configured.
+ Which leads to the business opportunity.
+ Why dont the cable and telco providers, as their nets go IP or lay Fiber, add a free or low
+cost premium . on network tier of service ?. Call it Your Town Service. 200mbs up and downstream for any
+traffic that stays on the local network.
+ If you want to send the kids home videos that you just captured on your brand new High Def HDV camera and its 10gbs in
+size. So what. If grandma subscribes to the same service provider and lives in the network you are part of, she gets it
+in a couple minutes.
+ With that kind of bandwidth and more, all kind of interesting things start to happen. Is the local hospital or your
+doctors office on the network ? If it is, then just sit in front of your high resolution webcam and let him take a look
+at how that rash is doing…
+ Of course you would hook up all the schools. Any number of applications come to mind there. Security. Monitoring
+classes when sick (sorry kids). Parent teacher conferencing.
+ Want to produce a neighborhood tv channel that you stream to just the neighborhood ? NO problem. As long as you all
+subscribe to the same provider
+ Local retailers could use webcams to take orders, ask questions, show merchandise. It would give the local merchants
+in the area an advantage over the big boys. Which of course would cause the big boys to have locations on the network
+in order to compete and participate.
+ 
+ There in lies the opportunity. This is MCI’s friends and family all over again. Its what the wireless
+companies are doing with phone service. If you call people on their network there are unlimited minutes. No long
+distance charges
+ So why arent the cable and telcos doing the same thing ?
+ Why not offer 200mbs network (not internet) , growing to 1gbs service over time , between any local nodes on your
+network for an extra 5 bucks per month ? Or even as part of your current pricing ?
+ If you want 200mbs, the person, place or thing you want to communicate with has to subscribe to the same service and
+be on the same network. Think maybe the first network to do this would cause a huge rush for people to
+make sure they are on the same network ? THink i wouldnt make sure im subscribed to whatever network my
+daughters school is on ? or that my doctor or local hospital is on ?
+ Think kids wanting to play online games against their buddies wont jump all over this to play at breakneck speeds
+?
+ Internet access would work the same way it always has. Access to the outside internet, would still be at the
+1,3,5,10mbs levels of service currently offered.
+ The first provider to offer this would create a first come, first serve subscriber rush. Just like it was in
+long distance and cellphones.
+ 
+ Who ever introduces this first wins.
+ It would be such an easy sell. Go to the local school, doctors, hospital, employers. Tell them that if they buy
+internet access from you, you will give them free 200mbs on network service. Watch how fast they require locals they
+communicate regularly with to subscribe to your service.
+ 200mbs plus on network connectivity for next to nothing. Simple to do on a well designed network. Easy money.
+ Why hasnt it been offered ?
+ I look forward to reading the comments

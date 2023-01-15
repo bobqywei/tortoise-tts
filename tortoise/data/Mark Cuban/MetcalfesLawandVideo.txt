@@ -1,0 +1,35 @@
+Don’t remember where I saw Metcalfe’s law mentioned, but it got me thinking.
+
+
+Metcalfe’s law states that the more nodes connected to a network the more valuable the network is. Its a simple yet brilliant concept. 
+
+Since i have some time on my hands recovering from my hip replacement, I decided to ponder what laws applied to the value of video content and its viewers.
+
+IMHO, there appear to be some simple “rules” that apply to the value of video content. Lets call them my hypothesis
+
+
+1. The more people that see content when it is originally “broadcast”, regardless of the distribution medium, the more valuable the content. 
+ This is the example of “appointment viewing” or “breaking news”. The more people who planned to watch, or did so as soon as they heard about it, the more valuable the content. 
+
+
+Call this the “heat check”. 
+
+10mm people watching a tv show at the same time creates more value for the content than 10mm people watching the same show on demand over the course of time. 
+
+2. The greater the number of people that watch content simultaneously, the greater the emotional attachment of the viewer.
+ The greater amount of confirmation that a viewer can get from other viewers that there were others, like them that made an appointment to see a video or immediately changed their plans to watch a video, the greater the “we ” effect and emotional attachment.
+
+
+
+3. The longer the period required for content to saturate viewer demand, the cheaper the cost of delivery. Without the constraint of time, the originator to choose the least expensive method of delivery
+
+
+4. The shorter the period required to saturate demand, the more expensive the cost. This is not intuitive. At first blush it may seem that broadcast technologies can reach an immense audience in realtime with a zero marginal cost of delivery to a new viewer. 
+
+ However, there is a signicant cost to build a network that can saturate demand immediately. It usually takes constrained resources, whether it is spectrum for broadcast networks, the delivery infrastructure to reach an uncapped audience and the ability to deliver it without time constraints. 
+
+
+5. The greater the number of content alternatives at any given point in time, the more expensive it is for any given piece of content to acquire an incremental viewer. The cost may come in the form of investment into the production of the content, advertising, promotion or placement. It may come in the form of sweat equity from hustling to promote the content. 
+
+I thought this might create some interesting discussion that I could learn from, so here you go !
+

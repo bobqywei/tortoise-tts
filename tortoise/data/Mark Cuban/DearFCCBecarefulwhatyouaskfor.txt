@@ -1,0 +1,82 @@
+
+  You want ala carte, you got ala carte.
+Its called the internet. Every single major cable and telephone company offers high speedaccess to the
+  internet and they allow you to pick andchoose the content you want to view.
+The internetis the definition of ala carte program. Every type of programmingimaginable. All there for
+  you to find and choose what you want, when you want it. Some witha price tag. Most for free.
+Openup your favoritesearch engineand put in the name of the program you want. Or put in the type
+  of programming you want. Its your Electronic Programming Guide. If its there and available you can find it.
+Want to set up “channels” just so you can make it a little easier for you and the not so literate internet folks
+  to understand ? No problem. There have been standards to define programming channels on the net since IE 4.0.
+Or you can just bookmark your favorite kids or family friendly websites and limit use to those sites.
+Ala carte. Just the way you want it.
+But its not on TV you say ? Well thats easy. Buy a
+
+  wireless RF transmitter for under 70 bucks. Plug it into the video out of your PC. Plug the reciever unit to the
+  video in of your TV. Start the video on the PC and boom, you are watching the video on your TV. Any TV. The old
+  black and white or the new plasma.
+Its easy. I bet for another 50 bucks, you can get the cable company or any 17 year old to come set it all up for
+  you. There you have it. Unlimited choice. Complete ala carte.
+The only thing missing is that traditional programmers havent flocked to create programming for this unlimited
+  choice universe.
+its the beauty of capitalism. Where there is opportunity, you can find cash deployed to capitalize. But you
+  cant find it on the net. You can find inexpensive content. If its cheap and easy its created specifically as
+  programming for the net. But is there a single example of a million dollars spent on a show exclusively for the net
+  ?
+There should be. The potential customer base consists of 90mm broadband users in the USA. 100s of millions
+  across the world. Any programmerwith a high speed data line can reach any of them. Yet no one chooses to invest
+  an amount equalto even the least expensivebroadcast network show. Why ?
+Because in an ala carte world, the cost of reaching an audience is outrageous. And consumers arent ready to
+  pay the freight to receive that programming.
+As i have said before, the movie market is ala carte. Look at which content rises to the top in terms of
+  revenues from consumers and visibility. The content from the biggest companies who have spent the most money to
+  market .
+Our movie from HDNet Films,
+Enron- The Smartest Guys in the Room cost a relatively small $770k to
+  make, but we needed to spend millions to create visibility for the film. When we tried to get creative and
+  offer the film dayand date with its release on HDNet Films, the big theatrical chains got together and
+  decided they wouldnt carry it. Despite our unique offer to share in the revenues from the sale of the DVD. The
+  point being that if video distribution goes ala carte, the response from the powers that be wont be to embrace the
+  change. It will be to find ways to circumvent the change to their advantage.The movie industry is the perfect
+  example. Despite the fact that anyone with a videocamera and PC can produce a movie, the cost to get it to consumer
+  in an ala carte movie world, precludes all butthebiggest and/or very, very fortunate from reaching an
+  audience large enough to break even on a movie release..
+Despite the fact that big movie studios could produce many, many movies for consumption, they produce a limited
+  number every year because they have pushed the cost to market a movieto such extremes. In their
+  alacarte movie market, they cant afford the risk. Is that where you want the TV business to go ? Do you want TV
+  production companies and networks to have to spend tens of millions ofdollars on each new show to make sure
+  that enough people watch and continue their ala carte selection of the network hosting the show ?
+But wait, there is more to consider. There are technological considerations. Let me give you a phrase that you
+  will hear for the next 100 years when it comes to video distribution and I promise you , it will haunt you in an ala
+  carte world. That phrase is : “Bits are bits”
+What that means is that digital bits dont care what type of data they carry. They are agnostic. Telephone
+  conversations. Ok. Video. Ok. Internet traffic. Ok. Video Conferencing. Ok. Medical Applications. Ok. Software
+  applications. OK.
+Every video distributor is limited in the amount of bits they can carry to the bandwidth they have. The
+  valuation model of the cable industry is quickly turning into a revenue per bit maximization model. Which cable
+  MSO can sell the mix of digitalbits that maximizes the return on the number of bits available. Call it
+  Bit to Revenue Optimization.
+If you muck up the video distribution side of the business so that video distributors, be they cable , satellite
+  or telco find that the return for bandwidth allocated to TV programming is less than bandwidth allocated to non video
+  applications, you got a huge problem.
+You see, video bits require the most hand holding. They have to arrive with all the other bits that are part of
+  the TV show in a nice, neat continuous stream (net of some buffering of course).  When those video bits are
+  part of medical or video conferencing applications, both the originators and the users expect to pay a little more.
+  When those bits are part of a TV show, they expect to pay a lot less.The model works today because the
+  aggregation of all those bits creates a price and experience that not only people are comfortable with, but that
+  consumers feel like they cant live without. Ask a politician whether his constituents will be happy if it turns out
+  that his/her push for ala carte results in less choice and higher prices ?
+In an ala carte world, the ala carte applies not just to consumers choosing between TV networks, but distributors
+  choosing which applications to offer. Cable MSOs, Satcosand Telcos want their stock price to go up. They want
+  to make more money. There is the very real possibility, and I would say likelihood that as new software applications
+  come along, and they will, they could successfully compete for bits on distributors networks to the exclusion of TV
+  bits. Im not saying digital TV would go away, it wont. But could substantially less bandwidth be allocated to TV ? Of
+  course.
+So, to all of you at the FCC, be careful what you ask for. That knock on your office door that today has people
+  saying they dont want to pay for channels they dont want, tomorrow could be people asking why you let them change
+  everything when it used to work so well.
+
+  And a word of advice to take or leave as you see fit. Its always a mistake to listen to your customers. The goal of
+  any organization should be to give their customers or constituents what they will want, not what they did want. Its
+  not the job of the customer to know their future consumption habits. Its your job.
+
