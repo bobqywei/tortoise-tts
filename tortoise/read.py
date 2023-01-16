@@ -64,7 +64,9 @@ if __name__ == '__main__':
                 fail_path = os.path.join(outdir, 'fails')
                 if os.path.exists(fail_path):
                     with open(fail_path, 'r') as f:
-                        regenerate = [int(e) for e in f.readline().split(',')]
+                        line = f.readline().strip()
+                        if line != '':
+                            regenerate = [int(e) for e in line.split(',')]
                 
             # Skip if already generated and not regenerating
             if regenerate is None and os.path.isdir(outdir):
@@ -91,8 +93,10 @@ if __name__ == '__main__':
                 print(f'\nGenerating clip for {filename} {j}/{len(texts)}: {text}')
                 # Directly load audio if already generated and we are not regenerating this clip
                 if regenerate is not None and j not in regenerate:
-                    all_parts.append(load_audio(os.path.join(outdir, f'{j}.wav'), 24000))
-                    continue
+                    audio_path = os.path.join(outdir, f'{j}.wav')
+                    if os.path.exists(audio_path):
+                        all_parts.append(load_audio(audio_path, 24000))
+                        continue
 
                 wav_path = os.path.join(outdir, f'{j}.wav')
                 if args.candidates == 1:
@@ -108,6 +112,8 @@ if __name__ == '__main__':
                     for k, g in enumerate(gen):
                         gen = g.squeeze(0).cpu()
                         torchaudio.save(wav_path, gen, 24000)
+
+                        # Transcribe speech to text and compare to ground truth
                         stt_text = stt.transcribe(wav_path)['text'].strip()
                         gt_tokens = [t for t in text.split() if bool(re.search(r'[a-zA-Z0-9]', t))]
                         stt_tokens = [t for t in stt_text.split() if bool(re.search(r'[a-zA-Z0-9]', t))]
@@ -119,6 +125,7 @@ if __name__ == '__main__':
 
                 all_parts.append(gen)
 
+            # Save the clip ids that failed speech-to-text test
             with open(os.path.join(outdir, 'fails'), 'w') as f:
                 if len(failed) > 0:
                     f.write(','.join(failed.keys()) + '\n')
