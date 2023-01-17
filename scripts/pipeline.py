@@ -3,12 +3,14 @@ import boto3
 import uuid
 import argparse
 
+from typing import Dict, Iterable, List, Tuple
+
 import aws_config
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--audio', type=str, help='Audio data dir.', default=None)
 
-def get_audio_files(audio_dir):
+def get_audio_files(audio_dir: str) -> Tuple[Dict[str, str], List[str]]:
     audio_files = []
     categories = []
     for root, dirs, files in os.walk(audio_dir):
@@ -46,15 +48,33 @@ def upload_s3(bucket_name, files):
     return file_urls
 
 
-def upload_dynamo_db(essays_data, category_data):
+def upload_categories(categories: Iterable[str], resource) -> Dict[str, str]:
+    table = resource.Table(aws_config.ESSAY_CATEGORY_TABLE_NAME)
 
-    dynamodb_resource = boto3.resource(
-        'dynamodb',
-        region_name='us-west-1',
-        aws_access_key_id=aws_config.AWS_ACCESS_KEY_ID,
-        aws_secret_access_key=aws_config.AWS_SECRET_ACCESS_KEY,)
+    name_to_ids = {}
+    for category in categories:
+        response = table.query(
+            IndexName="byEssayCategoryName",
+            KeyConditionExpression=boto3.dynamodb.conditions.Key('name').eq(category),
+        )
+        if "Items" not in response or len(response["Items"]) == 0:
+            category_id = str(uuid.uuid4())
+            print('Putting new category: ', category)
+            table.put_item(
+                Item={
+                    "id": category_id,
+                    "name": category,
+                }
+            )
+        else:
+            category_id = response["Items"][0]["id"]
+        name_to_ids[category] = category_id
+    return name_to_ids
 
-    table = dynamodb_resource.Table(aws_config.AUTHOR_TABLE_NAME)
+
+def upload_essays_and_authors(essays_data, resource):
+
+    table = resource.Table(aws_config.AUTHOR_TABLE_NAME)
 
     for essay in essays_data:
         author_name = essay["author_name"]
@@ -88,15 +108,6 @@ def upload_dynamo_db(essays_data, category_data):
         if "Items" not in response or len(response["Items"]) == 0:
             print('Putting new essay: ', essay['name'])
             essay_table.put_item(Item=essay)
-    
-    category_table = dynamodb_resource.Table(aws_config.ESSAY_CATEGORY_TABLE_NAME)
-    for category in category_data:
-        response = category_table.query(
-            IndexName="byEssayCategoryName",
-            KeyConditionExpression=boto3.dynamodb.conditions.Key('name').eq(category['name']))
-        if "Items" not in response or len(response["Items"]) == 0:
-            print('Putting new category: ', category['name'])
-            category_table.put_item(Item=category)
 
 
 if __name__ == '__main__':
@@ -113,22 +124,25 @@ if __name__ == '__main__':
     # with open('file_urls.txt', 'r') as f:
     #     file_urls = f.readlines()
 
+    dynamodb_resource = boto3.resource(
+        'dynamodb',
+        region_name='us-west-1',
+        aws_access_key_id=aws_config.AWS_ACCESS_KEY_ID,
+        aws_secret_access_key=aws_config.AWS_SECRET_ACCESS_KEY,)
+
+    category_names_to_ids = upload_categories(set(categories), resource=dynamodb_resource)
+
     essays_data = [
         {
             "id": str(uuid.uuid4()),
             "name": file_urls[x].split('/')[-1].split('.wav')[0],
             "imageUri": "s3://spotifye549ed42da7f4fada97d00a50269aa43154513-default/public/author_images/paul_graham.png",
             "audioUri": file_urls[x],
-            "essayCategoryId": categories[x],
+            "essayCategoryId": category_names_to_ids[categories[x]],
             "authorImageUri": "s3://spotifye549ed42da7f4fada97d00a50269aa43154513-default/public/author_images/paul_graham.png",
             # author name is temporarily needed to get author id
             "author_name": file_urls[x].split('/')[-3]
         } for x in range(len(files))
     ]
-    categories_data = [
-        {
-            "id": str(uuid.uuid4()),
-            "name": category
-        } for category in set(categories)
-    ]
-    upload_dynamo_db(essays_data, categories_data)
+
+    upload_essays_and_authors(essays_data, resource=dynamodb_resource)
