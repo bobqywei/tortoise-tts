@@ -134,7 +134,7 @@ dmypy.json
 results/*
 debug_states/*
 
-scripts/aws_config.py
+tortoise/scripts/aws_secret.py
 
 *.wav
 tortoise/data/audio/*

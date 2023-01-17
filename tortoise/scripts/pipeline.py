@@ -5,7 +5,7 @@ import argparse
 
 from typing import Dict, Iterable, List, Tuple
 
-import aws_config
+import tortoise.scripts.aws_secret as aws_secret
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--audio', type=str, help='Audio data dir.', default=None)
@@ -35,8 +35,8 @@ def upload_s3(bucket_name, files):
 
     s3 = boto3.client(
         's3',
-        aws_access_key_id=aws_config.AWS_ACCESS_KEY_ID,
-        aws_secret_access_key=aws_config.AWS_SECRET_ACCESS_KEY,
+        aws_access_key_id=aws_secret.AWS_ACCESS_KEY_ID,
+        aws_secret_access_key=aws_secret.AWS_SECRET_ACCESS_KEY,
     )
 
     file_urls = []
@@ -50,7 +50,7 @@ def upload_s3(bucket_name, files):
 
 
 def upload_categories(categories: Iterable[str], resource) -> Dict[str, str]:
-    table = resource.Table(aws_config.ESSAY_CATEGORY_TABLE_NAME)
+    table = resource.Table(aws_secret.ESSAY_CATEGORY_TABLE_NAME)
 
     name_to_ids = {}
     for category in categories:
@@ -75,7 +75,7 @@ def upload_categories(categories: Iterable[str], resource) -> Dict[str, str]:
 
 def upload_essays_and_authors(essays_data, resource):
 
-    table = resource.Table(aws_config.AUTHOR_TABLE_NAME)
+    table = resource.Table(aws_secret.AUTHOR_TABLE_NAME)
 
     for essay in essays_data:
         author_name = essay["author_name"]
@@ -99,7 +99,7 @@ def upload_essays_and_authors(essays_data, resource):
 
         essay.pop('author_name')
 
-    essay_table = dynamodb_resource.Table(aws_config.ESSAY_TABLE_NAME)
+    essay_table = dynamodb_resource.Table(aws_secret.ESSAY_TABLE_NAME)
     for essay in essays_data:
         response = essay_table.query(
             IndexName="byEssayNameAndAuthor",
@@ -116,7 +116,7 @@ if __name__ == '__main__':
     audio_dir = args.audio
 
     files, categories = get_audio_files(audio_dir=audio_dir)
-    file_urls = upload_s3(aws_config.S3_BUCKET_NAME, files)
+    file_urls = upload_s3(aws_secret.S3_BUCKET_NAME, files)
 
     # with open('file_urls.txt', 'w') as f:
     #     for url in file_urls:
@@ -128,8 +128,8 @@ if __name__ == '__main__':
     dynamodb_resource = boto3.resource(
         'dynamodb',
         region_name='us-west-1',
-        aws_access_key_id=aws_config.AWS_ACCESS_KEY_ID,
-        aws_secret_access_key=aws_config.AWS_SECRET_ACCESS_KEY,)
+        aws_access_key_id=aws_secret.AWS_ACCESS_KEY_ID,
+        aws_secret_access_key=aws_secret.AWS_SECRET_ACCESS_KEY,)
 
     category_names_to_ids = upload_categories(set(categories), resource=dynamodb_resource)
 
@@ -137,10 +137,10 @@ if __name__ == '__main__':
         {
             "id": str(uuid.uuid4()),
             "name": file_urls[x].split('/')[-1].split('.wav')[0],
-            "imageUri": aws_config.TEMP_IMAGE_URI,
+            "imageUri": aws_secret.TEMP_IMAGE_URI,
             "audioUri": file_urls[x],
             "essayCategoryId": category_names_to_ids[categories[x]],
-            "authorImageUri": aws_config.TEMP_IMAGE_URI,
+            "authorImageUri": aws_secret.TEMP_IMAGE_URI,
             # author name is temporarily needed to get author id
             "author_name": file_urls[x].split('/')[-3]
         } for x in range(len(files))
