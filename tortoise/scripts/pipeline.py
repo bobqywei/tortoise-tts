@@ -41,8 +41,9 @@ def upload_s3(bucket_name, files):
 
     file_urls = []
     for file in files:
-        s3.upload_file(file['file_path'], bucket_name, file['file_name'])
-        file_url = '%s/%s/%s' % (s3.meta.endpoint_url, bucket_name, file['file_name'])
+        s3.upload_file(file['file_path'], bucket_name, file['file_name'], ExtraArgs={'ACL':'public-read'})
+        location = s3.get_bucket_location(Bucket=bucket_name)['LocationConstraint']
+        file_url = "https://%s.s3.%s.amazonaws.com/%s" % (bucket_name, location, file['file_name'])
         file_urls.append(file_url)
 
     return file_urls
