@@ -8,6 +8,13 @@ parser.add_argument('--text', type=str, help='A dir containing the text', defaul
 parser.add_argument('--audio', type=str, help='A dir containing the audio', default=None)
 
 
+def has_subdirectories(directory_path):
+    for _, dirs, _ in os.walk(directory_path):
+        if dirs:
+            return True
+    return False
+
+
 def get_leaf_files(directory):
     paths = []
     for item in os.listdir(directory):

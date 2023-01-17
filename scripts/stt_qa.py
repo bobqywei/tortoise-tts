@@ -5,12 +5,7 @@ import re
 
 import whisper
 
-
-def has_subdirectories(directory_path):
-    for _, dirs, _ in os.walk(directory_path):
-        if dirs:
-            return True
-    return False
+from .file_utils import has_subdirectories
 
 
 if __name__ == '__main__':
@@ -44,7 +39,7 @@ if __name__ == '__main__':
                     incorrect[wav_path.split('/')[-1].rstrip('.wav')] = (gt_text, stt_text)
 
             if incorrect:
-                with open(os.path.join(leaf_dir, "fails"), "w") as f:
+                with open(os.path.join(leaf_dir, "failed"), "w") as f:
                     f.write(','.join(incorrect.keys()) + '\n')
                     for k, (gt, stt) in incorrect.items():
                         f.write(f'{k}:\n{gt}\n{stt}\n')

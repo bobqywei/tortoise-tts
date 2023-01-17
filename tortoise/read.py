@@ -101,13 +101,13 @@ if __name__ == '__main__':
                 wav_path = os.path.join(outdir, f'{j}.wav')
                 if args.candidates == 1:
                     gen = tts.tts_with_preset(text, voice_samples=voice_samples, conditioning_latents=conditioning_latents,
-                                            preset=args.preset, k=args.candidates, use_deterministic_seed=seed)
+                                              preset=args.preset, k=args.candidates, use_deterministic_seed=seed)
                     gen = gen.squeeze(0).cpu()
                     torchaudio.save(wav_path, gen, 24000)
 
                 else:
                     gen = tts.tts_with_preset(text, voice_samples=voice_samples, conditioning_latents=conditioning_latents,
-                                            preset=args.preset, k=args.candidates, use_deterministic_seed=seed)
+                                              preset=args.preset, k=args.candidates, use_deterministic_seed=seed)
                     passed = False
                     for k, g in enumerate(gen):
                         gen = g.squeeze(0).cpu()
@@ -126,11 +126,15 @@ if __name__ == '__main__':
                 all_parts.append(gen)
 
             # Save the clip ids that failed speech-to-text test
-            with open(os.path.join(outdir, 'fails'), 'w') as f:
-                if len(failed) > 0:
+            fail_path = os.path.join(outdir, 'fails')
+            if len(failed) > 0:
+                with open(fail_path, 'w') as f:
                     f.write(','.join(failed.keys()) + '\n')
                     for i, (gt_text, stt_text) in failed.items():
                         f.write(f'{i}:\n{gt_text}\n{stt_text}\n')
+            else:
+                if os.path.exists(fail_path):
+                    os.remove(fail_path)
 
             full_audio = torch.cat(all_parts, dim=-1)
             torchaudio.save(os.path.join(outdir, 'combined.wav'), full_audio, 24000)

@@ -136,10 +136,10 @@ if __name__ == '__main__':
         {
             "id": str(uuid.uuid4()),
             "name": file_urls[x].split('/')[-1].split('.wav')[0],
-            "imageUri": "s3://spotifye549ed42da7f4fada97d00a50269aa43154513-default/public/author_images/paul_graham.png",
+            "imageUri": aws_config.TEMP_IMAGE_URI,
             "audioUri": file_urls[x],
             "essayCategoryId": category_names_to_ids[categories[x]],
-            "authorImageUri": "s3://spotifye549ed42da7f4fada97d00a50269aa43154513-default/public/author_images/paul_graham.png",
+            "authorImageUri": aws_config.TEMP_IMAGE_URI,
             # author name is temporarily needed to get author id
             "author_name": file_urls[x].split('/')[-3]
         } for x in range(len(files))
