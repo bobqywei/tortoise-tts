@@ -55,9 +55,12 @@ if __name__ == '__main__':
         assert len(outdirs) == 1, "When using textfile, must have exactly one audio_dir"
         if regenerate is not None:
             regenerate = [int(e) for e in regenerate.split(',')]
+    total_num_files = sum([len(textfiles) for textfiles in textdir_files])
 
-    for k, (textfiles, outdir) in enumerate(zip(textdir_files, outdirs)):
-        for i, textfile in enumerate(textfiles):
+    text_index = 0
+    for textfiles, outdir in zip(textdir_files, outdirs):
+        for textfile in textfiles:
+            text_index += 1
             filename = textfile.split('/')[-1].split('.')[0]
 
             # Process text
@@ -93,16 +96,16 @@ if __name__ == '__main__':
 
                 failed = {}
                 all_parts = []
-                for j, text in enumerate(texts):
-                    print(f'\n{k}/{len(outdirs)}: {outdir}\n{i}/{len(textfiles)}: {filename}\n{j}/{len(texts)}: {text}\n{selected_voice}')
+                for segment_index, text in enumerate(texts, start=1):
+                    print(f'\n{text_index}/{total_num_files}: {filename}\n{segment_index}/{len(texts)}: {text}\n{selected_voice}')
 
                     # Write text clip to file to match audio clips
-                    with open(os.path.join(audio_dir, f'{j}.txt'), 'w') as f:
+                    with open(os.path.join(audio_dir, f'{segment_index}.txt'), 'w') as f:
                         f.write(text)
 
-                    wav_path = os.path.join(audio_dir, f'{j}.wav')
+                    wav_path = os.path.join(audio_dir, f'{segment_index}.wav')
                     # Skip if we are not regenerating this clip and audio exists
-                    if (not regenerate or j not in regenerate) and os.path.exists(wav_path):
+                    if (not regenerate or segment_index not in regenerate) and os.path.exists(wav_path):
                         all_parts.append(load_audio(wav_path, 24000))
                         continue
 
@@ -112,13 +115,13 @@ if __name__ == '__main__':
                         generated = [generated]
 
                     passed = False
-                    for k, g in enumerate(generated):
+                    for g in generated:
                         gen = g.squeeze(0).cpu()
                         torchaudio.save(wav_path, gen, 24000)
                         if use_stt:
                             result = stt.transcribe(wav_path)
                             # Save the sentence timestamps
-                            with open(os.path.join(audio_dir, f'{j}.timestamps'), "w") as f:
+                            with open(os.path.join(audio_dir, f'{segment_index}.timestamps'), "w") as f:
                                 for segment in result['segments']:
                                     f.write(f"{segment['start']}-{segment['end']}: {segment['text']}\n")
                             # QA with stt results
@@ -128,7 +131,7 @@ if __name__ == '__main__':
 
                     all_parts.append(gen)
                     if not passed:
-                        failed[str(j)] = (text, result['text'].strip())
+                        failed[str(segment_index)] = (text, result['text'].strip())
 
                 # Save the clip ids that failed speech-to-text test
                 if use_stt:
