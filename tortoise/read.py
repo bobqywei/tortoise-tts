@@ -96,18 +96,18 @@ if __name__ == '__main__':
 
                 failed = {}
                 all_parts = []
-                for segment_index, text in enumerate(texts, start=1):
-                    print(f'\n{text_index}/{total_num_files}: {filename}\n{segment_index}/{len(texts)}: {text}\n{selected_voice}')
-
-                    # Write text clip to file to match audio clips
-                    with open(os.path.join(audio_dir, f'{segment_index}.txt'), 'w') as f:
-                        f.write(text)
+                for segment_index, text in enumerate(texts):
+                    print(f'\n{text_index}/{total_num_files}: {filename}\n{segment_index + 1}/{len(texts)}: {text}\n{selected_voice}')
 
                     wav_path = os.path.join(audio_dir, f'{segment_index}.wav')
                     # Skip if we are not regenerating this clip and audio exists
                     if (not regenerate or segment_index not in regenerate) and os.path.exists(wav_path):
                         all_parts.append(load_audio(wav_path, 24000))
                         continue
+
+                    # Write text clip to file to match audio clips
+                    with open(os.path.join(audio_dir, f'{segment_index}.txt'), 'w') as f:
+                        f.write(text)
 
                     generated = tts.tts_with_preset(text, voice_samples=voice_samples, conditioning_latents=conditioning_latents,
                                                     preset=args.preset, k=args.candidates, use_deterministic_seed=seed)
