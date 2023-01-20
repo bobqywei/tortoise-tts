@@ -2,6 +2,7 @@ import os
 import glob
 import argparse
 import shutil
+from typing import List
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--text', type=str, help='A dir containing the text', default=None)
@@ -15,7 +16,7 @@ def has_subdirectories(directory_path):
     return False
 
 
-def get_leaf_files(directory):
+def get_leaf_files(directory: str) -> List[str]:
     paths = []
     for item in os.listdir(directory):
         item_path = os.path.join(directory, item)

@@ -1,4 +1,5 @@
 import argparse
+from collections import defaultdict
 import glob
 import os
 from time import time
@@ -11,12 +12,13 @@ from api import TextToSpeech, MODELS_DIR
 from utils.audio import load_audio, load_voices
 from utils.text import split_and_recombine_text
 from scripts.stt import check_texts_approx_match
+from scripts.file_utils import get_leaf_files
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--textdirs', type=str, help='A dir containing the texts to read. Multiple dirs can be specified in a comma separated list', default=None)
+parser.add_argument('--textdir', type=str, help='A dir containing the texts to read.', default=None)
 parser.add_argument('--voice', type=str, help='Selects the voice to use for generation. See options in voices/ directory (and add your own!) '
                                                 'Use the & character to join two voices together. Use a comma to perform inference on multiple voices.', default='pat')
-parser.add_argument('--outdirs', type=str, help='Where to store outputs. Must match the number of textdirs.', default='results/')
+parser.add_argument('--outdir', type=str, help='Where to store outputs.', default='results/')
 parser.add_argument('--candidates', type=int, help='How many output candidates to produce per-voice. Only the first candidate is actually used in the final product, the others can be used manually.', default=1)
 parser.add_argument('--fix', type=bool, help='Enable failure fixing mode.', default=False)
 parser.add_argument('--qa', type=bool, help='Enable QA with stt.', default=False)
@@ -42,23 +44,21 @@ if __name__ == '__main__':
     if use_stt:
         stt = whisper.load_model("large-v2")
 
-    if args.textdirs is not None:
-        textdirs = args.textdirs.split(',')
-        outdirs = args.outdirs.split(',')
-        textdir_files = []
-        assert len(textdirs) == len(outdirs), "Must have the same number of textdirs and outdirs"
-        for textdir in textdirs:
-            textdir_files.append(glob.glob(os.path.join(textdir, '*.txt')))
+    if args.textdir is not None:
+        text_paths = [p for p in get_leaf_files(args.textdir) if p.endswith('.txt')]
+        textdirs_to_files_map = defaultdict(list)
+        for text_path in text_paths:
+            textdirs_to_files_map[os.path.dirname(text_path)].append(text_path)
     else:
-        textdir_files = [[args.textfile]]
-        outdirs = args.outdirs.split(',')
-        assert len(outdirs) == 1, "When using textfile, must have exactly one audio_dir"
+        textdirs_to_files_map = {os.path.dirname(args.textfile): [args.textfile]}
         if regenerate is not None:
             regenerate = [int(e) for e in regenerate.split(',')]
-    total_num_files = sum([len(textfiles) for textfiles in textdir_files])
+    total_num_files = sum([len(v) for v in textdirs_to_files_map.values()])
 
     text_index = 0
-    for textfiles, outdir in zip(textdir_files, outdirs):
+    for textdir, textfiles in textdirs_to_files_map.items():
+        outdir = os.path.join(args.outdir, os.path.basename(textdir))
+
         for textfile in textfiles:
             text_index += 1
             filename = textfile.split('/')[-1].split('.')[0]
@@ -86,6 +86,10 @@ if __name__ == '__main__':
                                 regenerate = [int(e) for e in line.split(',')]
                 elif not os.path.isdir(audio_dir):
                     os.makedirs(audio_dir, exist_ok=True)
+
+                # Skip if we are not regenerating and combined audio exists
+                if not regenerate and os.path.exists(os.path.join(audio_dir, 'combined.wav')):
+                    continue
 
                 # Get voice samples and voice conditioning latents
                 if '&' in selected_voice:

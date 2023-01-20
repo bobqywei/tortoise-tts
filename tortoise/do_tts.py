@@ -12,7 +12,7 @@ if __name__ == '__main__':
     parser.add_argument('--text', type=str, help='Text to speak.', default="The expressiveness of autoregressive transformers is literally nuts! I absolutely adore them.")
     parser.add_argument('--voice', type=str, help='Selects the voice to use for generation. See options in voices/ directory (and add your own!) '
                                                  'Use the & character to join two voices together. Use a comma to perform inference on multiple voices.', default='random')
-    parser.add_argument('--preset', type=str, help='Which voice preset to use.', default='fast')
+    parser.add_argument('--preset', type=str, help='Which voice preset to use.', default='standard')
     parser.add_argument('--output_path', type=str, help='Where to store outputs.', default='results/')
     parser.add_argument('--model_dir', type=str, help='Where to find pretrained model checkpoints. Tortoise automatically downloads these to .models, so this'
                                                       'should only be specified if you have custom checkpoints.', default=MODELS_DIR)
