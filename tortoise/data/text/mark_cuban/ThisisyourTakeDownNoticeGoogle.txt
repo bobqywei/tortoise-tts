@@ -1,2 +1,0 @@
-1. You arent an ISP.2. You are offering to download this file to anyone. Just click on the download button.3. Since you make no effort prevent this file being uploaded any number of times, its not reasonable to expect a copyright owner to check an unlimited times of day to see if one of our movies has been uploaded
-<embed style=”width:400px; height:326px;” id=”VideoPlayback” type=”application/x-shockwave-flash” src=”http://video.google.com/googleplayer.swf?docId=-7121342145021187229&hl=en”&gt; </embed>

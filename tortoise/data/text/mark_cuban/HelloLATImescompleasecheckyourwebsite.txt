@@ -1,5 +1,0 @@
-I decided to check out the latimes sports section. Catch up on whats going on in LA since Im on my way there right now for business. So i click on an old link i hadnt used in a while.
-Sports.latimes.com
-Now Im sure this isnt a huge traffic driving url for LA Times, but did you guys sell off your 404s (incorrect webaddress by user) ?
-I had to go to your home page to get to the sports page on this http://www.latimes.com/sports/basketball/nba/lakers/
-Now this is not a big deal in the big scheme of newpapers future. Nor is it going to add a penny per share to the bottom line, but sometimes why in the world would you allow your sports page to be redirected to a 3rd party site rather than your own sports page ?
