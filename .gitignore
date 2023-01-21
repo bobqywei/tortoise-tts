@@ -136,5 +136,4 @@ debug_states/*
 
 tortoise/scripts/aws_secret.py
 
-*.wav
 tortoise/data/audio/*
