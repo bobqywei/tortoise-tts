@@ -134,7 +134,7 @@ if __name__ == '__main__':
                                 break
 
                     all_parts.append(gen)
-                    if not passed:
+                    if use_stt and not passed:
                         failed[str(segment_index)] = (text, result['text'].strip())
 
                 # Save the clip ids that failed speech-to-text test
