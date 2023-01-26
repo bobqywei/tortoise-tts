@@ -41,6 +41,7 @@ ABBREVS = {
     'ESP': ' especially ',
     'GM': ' general manager ',
     'JV': ' junior varsity ',
+    'LA': ' Los Angeles ',
     'MCL': ' medial collateral ligament ',
     'MIT': ' the Massachusetts Institute of Technology ',
     'MLS': ' Major League Soccer ',
