@@ -31,8 +31,8 @@ if __name__ == '__main__':
         filename = os.path.basename(path)
         with open(path, 'r') as f:
             text = f.read()
-        matches = re.findall(r"\s+([A-Z]+\.*[A-Z]+)+(\.*[A-Z]\.*)*\b", text)
-        for match in matches:
+        matches = re.findall(r"\s+(([A-Z]+\.*[A-Z]+)+(\.*[A-Z]\.*)*)\b", text)
+        for match, _, _ in matches:
             potential_abbrev = ''.join(match)
             if potential_abbrev.lower() not in english_words:
                 abbrevs[potential_abbrev].append(filename)
