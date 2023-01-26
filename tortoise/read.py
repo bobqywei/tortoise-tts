@@ -22,6 +22,7 @@ parser.add_argument('--candidates', type=int, help='How many output candidates t
 parser.add_argument('--fix', help='Enable failure fixing mode.', default=False, action='store_true')
 parser.add_argument('--qa', help='Enable QA with stt.', default=False, action='store_true')
 
+# Optional
 parser.add_argument('--textfile', type=str, help='A file containing the text to read.', default="tortoise/data/riding_hood.txt")
 parser.add_argument('--batch_size', type=int, help='Batch size to use.', default=16)
 parser.add_argument('--preset', type=str, help='Which voice preset to use.', default='standard')
