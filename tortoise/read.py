@@ -1,6 +1,5 @@
 import argparse
 from collections import defaultdict
-import glob
 import os
 from time import time
 
@@ -20,8 +19,8 @@ parser.add_argument('--voice', type=str, help='Selects the voice to use for gene
                                                 'Use the & character to join two voices together. Use a comma to perform inference on multiple voices.', default='pat')
 parser.add_argument('--outdir', type=str, help='Where to store outputs.', default='results/')
 parser.add_argument('--candidates', type=int, help='How many output candidates to produce per-voice. Only the first candidate is actually used in the final product, the others can be used manually.', default=1)
-parser.add_argument('--fix', type=bool, help='Enable failure fixing mode.', default=False)
-parser.add_argument('--qa', type=bool, help='Enable QA with stt.', default=False)
+parser.add_argument('--fix', help='Enable failure fixing mode.', default=False, action='store_true')
+parser.add_argument('--qa', help='Enable QA with stt.', default=False, action='store_true')
 
 parser.add_argument('--textfile', type=str, help='A file containing the text to read.', default="tortoise/data/riding_hood.txt")
 parser.add_argument('--batch_size', type=int, help='Batch size to use.', default=16)

@@ -1,4 +1,3 @@
-import os
 import re
 import argparse
 
@@ -24,37 +23,61 @@ REPLACE = {
     # Replace short form numbers
     r'no\.\s*(\d+)': r'number \1',
     r'\=': ' equals ',
-    # Replace quotations
-    r"[“”]": "\"",
-    r"[‘’]": "\'",
-    # Replace abbreviations
-    r"\bADD\b": " attention deficit disorder ",
-    r"\bCB\b": " Chris Bosh ",
-    r"\bACL\b": " anterior cruciate ligament ",
-    r'\bOK\b': ' okay ',
-    r'\bESP\b': ' especially ',
-    r'\bIII\b': ' the third ',
-    r'\bNBA\b': ' National Basketball Association ',
-    r'\bOCD\b': ' obsessive compulsive disorder ',
-    r'\bSUV\b': ' sport utility vehicle ',
-    r'\bTV\b': ' television ',
-    r'\bUS\b': ' United States ',
-    r'\bYC\b': ' Y Combinator ',
-    r'\bMCL\b': ' medial collateral ligament ',
-    r'\bUD\b': ' Udonis Haslem ',
-    r'\bNC\b': ' North Carolina ',
-    r'\bMIT\b': ' the Massachusetts Institute of Technology ',
-    r'\bJV\b': ' junior varsity ',
+    # Prevent run-on sentences
+    r':': '.',
+    r';': '.',
+}
+
+ABBREVS = {
+    "ACL": " anterior cruciate ligament ",
+    "AAU": " american athletic union ",
+    "ADD": " attention deficit disorder ",
+    "CB": " Chris Bosh ",
+    'ESP': ' especially ',
+    'II': ' the second ',
+    'III': ' the third ',
+    'VII': ' the seventh ',
+    'VIII': ' the eighth ',
+    'NBA': ' National Basketball Association ',
+    'OCD': ' obsessive compulsive disorder ',
+    'SUV': ' sport utility vehicle ',
+    'TV': ' television ',
+    'US': ' United States ',
+    'YC': ' Wye Combinator ',
+    'MCL': ' medial collateral ligament ',
+    'UD': ' Udonis Haslem ',
+    'NC': ' North Carolina ',
+    'MIT': ' the Massachusetts Institute of Technology ',
+    'JV': ' junior varsity ',
+    'weeknd': ' weekend ',
+    'Weeknd': ' Weekend ',
+    'USL': ' United Soccer League ',
+    'RIAA': ' Recording Industry Association of America ',
+    'PR': ' public relations ',
+    'PG': ' point guard ',
+    'Shaq': ' Shaquille ',
+    'shaq': ' shaquille ',
+    'OT': ' overtime ',
+    'NHL': ' National Hockey League ',
+    'MLS': ' Major League Soccer ',
+    'GM': ' general manager ',
 }
 
 
 if __name__ == '__main__':
     args = parser.parse_args()
-    textfiles = [p for p in get_leaf_files(args.dir) if p.endswith('.txt') and 'mark_cuban' not in p]
+    textfiles = [p for p in get_leaf_files(args.dir) if p.endswith('.txt')]
     for path in textfiles:
         with open(path, 'r') as f:
             text = f.read()
+        old_text = text
+
         for k, v in REPLACE.items():
             text = re.sub(k, v, text)
-        with open(path, 'w') as f:
-            f.write(text)
+        for k, v in ABBREVS.items():
+            text = re.sub(r'\b' + k + r'\b', v, text)
+
+        if text != old_text:
+            print(path)
+            with open(path, 'w') as f:
+                f.write(text)
