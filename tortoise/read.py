@@ -147,8 +147,9 @@ if __name__ == '__main__':
                     elif os.path.exists(fail_path):
                         os.remove(fail_path)
 
-                full_audio = torch.cat(all_parts, dim=-1)
-                torchaudio.save(os.path.join(audio_dir, 'combined.wav'), full_audio, 24000)
+                if all_parts:
+                    full_audio = torch.cat(all_parts, dim=-1)
+                    torchaudio.save(os.path.join(audio_dir, 'combined.wav'), full_audio, 24000)
 
                 if args.produce_debug_state:
                     os.makedirs('debug_states', exist_ok=True)
