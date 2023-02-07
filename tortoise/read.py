@@ -47,19 +47,23 @@ if __name__ == '__main__':
         text_paths = [p for p in get_leaf_files(args.textdir) if p.endswith('.txt')]
         textdirs_to_files_map = defaultdict(list)
         for text_path in text_paths:
-            textdirs_to_files_map[os.path.dirname(text_path)].append(text_path)
+            splits = text_path.split('/')
+            textdir = splits[-2:-1]
+            # Handle case where essay belongs to album
+            if '---' in textdir[0]:
+                textdir = [splits[-3]] + textdir
+            textdirs_to_files_map[tuple(textdir)].append(text_path)
     else:
-        textdirs_to_files_map = {os.path.dirname(args.textfile): [args.textfile]}
+        textdirs_to_files_map = {(os.path.dirname(args.textfile)): [args.textfile]}
         if regenerate is not None:
             regenerate = [int(e) for e in regenerate.split(',')]
     total_num_files = sum([len(v) for v in textdirs_to_files_map.values()])
 
-    text_index = 0
-    for textdir, textfiles in textdirs_to_files_map.items():
-        outdir = os.path.join(args.outdir, os.path.basename(textdir))
+    textfiles_count = 0
+    for textdir_tuple, textfiles in textdirs_to_files_map.items():
 
         for textfile in textfiles:
-            text_index += 1
+            textfiles_count += 1
             filename = textfile.split('/')[-1].split('.')[0]
 
             # Process text
@@ -73,7 +77,12 @@ if __name__ == '__main__':
                 texts = split_and_recombine_text(text)
 
             for selected_voice in selected_voices:
-                audio_dir = os.path.join(outdir, selected_voice, filename)
+                if len(textdir_tuple) == 1:
+                    audio_dir = os.path.join(args.outdir, textdir_tuple[0], selected_voice, filename)
+                elif len(textdir_tuple) == 2:
+                    audio_dir = os.path.join(args.outdir, textdir_tuple[0], selected_voice, textdir_tuple[1], filename)
+                else:
+                    raise NotImplementedError
 
                 # If we're in fix mode, check which clips failed and regenerate only those
                 if args.fix and os.path.isdir(audio_dir):
@@ -88,6 +97,7 @@ if __name__ == '__main__':
 
                 # Skip if we are not regenerating and combined audio exists
                 if not regenerate and os.path.exists(os.path.join(audio_dir, 'combined.wav')):
+                    print(f'Skipping {filename} because combined.wav already exists.')
                     continue
 
                 # Get voice samples and voice conditioning latents
@@ -100,7 +110,7 @@ if __name__ == '__main__':
                 failed = {}
                 all_parts = []
                 for segment_index, text in enumerate(texts):
-                    print(f'\n{text_index}/{total_num_files}: {filename}\n{segment_index + 1}/{len(texts)}: {text}\n{selected_voice}')
+                    print(f'\n{textfiles_count}/{total_num_files}: {filename}\n{segment_index + 1}/{len(texts)}: {text}\n{selected_voice}')
 
                     wav_path = os.path.join(audio_dir, f'{segment_index}.wav')
                     # Skip if we are not regenerating this clip and audio exists

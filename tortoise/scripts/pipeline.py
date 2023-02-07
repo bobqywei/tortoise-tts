@@ -11,6 +11,7 @@ import tortoise.scripts.aws_secret as aws_secret
 parser = argparse.ArgumentParser()
 parser.add_argument('--audio', type=str, help='Audio data dir.', default=None)
 parser.add_argument('--overwrite', action='store_true', help='Overwrite data files.', default=False)
+parser.add_argument('--voices', type=str, help='Comma separated list of voices to upload.', default='lj,train_dotrice')
 
 
 def get_current_time_aws_format() -> str:
@@ -25,7 +26,10 @@ def s3_file_exists(s3_client, bucket: str, file_path: str) -> bool:
     return True
 
 
-def get_audio_files(audio_dir: str) -> Tuple[List[Dict[str, str]], Set[str], Set[str], Set[str]]:
+def get_audio_files(
+    audio_dir: str,
+    voices: Iterable[str]
+    ) -> Tuple[List[Dict[str, str]], Set[str], Set[str], Set[str]]:
     audio_files = []
     authors = set()
     categories = set()
@@ -42,14 +46,21 @@ def get_audio_files(audio_dir: str) -> Tuple[List[Dict[str, str]], Set[str], Set
                     break
                 category_dir_idx += 1
 
+            voice = dirs[category_dir_idx - 1]
+            if voice not in voices:
+                continue
+
             filename = dirs[-1].split('---')[0]
             category = dirs[category_dir_idx].split('---')[1]
-            voice = dirs[category_dir_idx - 1]
             author = dirs[category_dir_idx - 2]
+
             album = None
-            if category_dir_idx + 1 < len(dirs):
-                album = dirs[category_dir_idx + 1].split('---')[0]
+            # Albums contain the category name one level up in the directory structure.
+            # Standalone essays contain the category name in the essay name itself.
+            if category_dir_idx < len(dirs) - 1:
+                album = dirs[category_dir_idx].split('---')[0]
                 albums.add(album)
+
             audio_files.append({
                 'author': author,
                 'voice': voice,
@@ -75,9 +86,10 @@ def upload_s3(bucket_name, files, overwrite: bool = False):
     file_urls = []
     for file in files:
         if not overwrite and s3_file_exists(s3, bucket_name, file['file_name']):
-            s3.upload_file(file['file_path'], bucket_name, file['file_name'], ExtraArgs={'ACL':'public-read'})
-        else:
             print('File already exists: ', file['file_name'])
+        else:
+            print('Uploading: ', file['file_name'])
+            s3.upload_file(file['file_path'], bucket_name, file['file_name'], ExtraArgs={'ACL':'public-read'})
         file_url = 'https://%s.s3.%s.amazonaws.com/%s' % (bucket_name, location, file['file_name'])
         file_urls.append(file_url)
 
@@ -131,10 +143,12 @@ if __name__ == '__main__':
     args = parser.parse_args()
     audio_dir = args.audio
 
-    files, authors, categories, albums = get_audio_files(audio_dir=audio_dir)
+    files, authors, categories, albums = get_audio_files(audio_dir=audio_dir, voices=args.voices.split(','))
     upload_files_data = [
         {
-            'file_name': os.path.join('public/audio', file['author'], file['voice'], file['name'] + '.wav'),
+            'file_name': os.path.join(*filter(
+                lambda x: x is not None,
+                ['public/audio', file['author'], file['voice'], file['album'], file['name'] + '.wav'])),
             'file_path': file['file_path'],
             'file_type': 'audio/xwav'
         } for file in files
@@ -163,11 +177,14 @@ if __name__ == '__main__':
     album_names_to_ids = upload_named_entity(
         albums,
         dynamodb_resource.Table(aws_secret.ALBUM_TABLE_NAME),
-        'byAlbumName',
+        'byEssayAlbumName',
         [aws_secret.TEMP_IMAGE_URI] * len(albums))
     
     essays_data = []
     for i, file_dict in enumerate(files):
+        # Temporary hack to only upload lj
+        if file_dict['voice'] != 'lj':
+            continue
         essays_data.append({
             'id': str(uuid.uuid4()),
             'name': file_dict['name'],
