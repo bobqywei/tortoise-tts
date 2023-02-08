@@ -59,6 +59,13 @@ if __name__ == '__main__':
             regenerate = [int(e) for e in regenerate.split(',')]
     total_num_files = sum([len(v) for v in textdirs_to_files_map.values()])
 
+    generated_files_list_path = os.path.join(args.outdir, 'generated.txt')
+    if os.path.exists(generated_files_list_path):
+        with open(generated_files_list_path, 'r') as f:
+            generated = set(f.readlines())
+    else:
+        generated = set()
+
     textfiles_count = 0
     for textdir_tuple, textfiles in textdirs_to_files_map.items():
 
@@ -96,8 +103,12 @@ if __name__ == '__main__':
                     os.makedirs(audio_dir, exist_ok=True)
 
                 # Skip if we are not regenerating and combined audio exists
-                if not regenerate and os.path.exists(os.path.join(audio_dir, 'combined.wav')):
+                combined_path = os.path.join(audio_dir, 'combined.wav')
+                if not regenerate and os.path.exists(combined_path):
                     print(f'Skipping {filename} because combined.wav already exists.')
+                    continue
+                elif not regenerate and combined_path.replace(args.outdir, '') in generated:
+                    print(f'Skipping {filename} because already marked as generated.')
                     continue
 
                 # Get voice samples and voice conditioning latents
