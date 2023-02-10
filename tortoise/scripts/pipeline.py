@@ -8,8 +8,11 @@ from typing import Dict, Iterable, List, Optional, Set, Tuple
 
 import tortoise.scripts.aws_secret as aws_secret
 
+_NO_ALBUM_DEFAULT = 'NO_ALBUM'
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--audio', type=str, help='Audio data dir.', default=None)
+parser.add_argument('--img', type=str, help='Image data dir.', default=None)
 parser.add_argument('--overwrite', action='store_true', help='Overwrite data files.', default=False)
 parser.add_argument('--voices', type=str, help='Comma separated list of voices to upload.', default='lj,train_dotrice')
 
@@ -20,20 +23,43 @@ def get_current_time_aws_format() -> str:
 
 def s3_file_exists(s3_client, bucket: str, file_path: str) -> bool:
     try:
-        s3_client.Object(bucket, file_path).load()
+        s3_client.head_object(Bucket=bucket, Key=file_path)
     except Exception as _:
         return False
     return True
 
 
+def get_image_files(dir: str):
+
+    def get_images_from_dir(extension: str):
+        path = os.path.join(dir, extension)
+        images = []
+        if os.path.exists(path):
+            for root, _, files in os.walk(path):
+                for f in files:
+                    if f.endswith('.png'):
+                        title = root.split('/')[-1]
+                        images.append({
+                            'file_name': os.path.join(*filter(lambda x: x, ['public', 'images', extension, title])),
+                            'file_path': os.path.join(root, f),
+                            'file_type': 'image/png'
+                        })
+        return images
+ 
+    author_images = get_images_from_dir('authors')
+    album_images = get_images_from_dir('albums')
+    essay_images = get_images_from_dir('essays')
+
+    return author_images, album_images, essay_images
+
+
 def get_audio_files(
     audio_dir: str,
-    voices: Iterable[str]
-    ) -> Tuple[List[Dict[str, str]], Set[str], Set[str], Set[str]]:
+    voices: Iterable[str]):
     audio_files = []
     authors = set()
     categories = set()
-    albums = set()
+    albums = {}
     for root, _, files in os.walk(audio_dir):
         for file in files:
             if 'combined' not in file:
@@ -59,7 +85,8 @@ def get_audio_files(
             # Standalone essays contain the category name in the essay name itself.
             if category_dir_idx < len(dirs) - 1:
                 album = dirs[category_dir_idx].split('---')[0]
-                albums.add(album)
+                if not album in albums:
+                    albums[album] = (category, author)
 
             audio_files.append({
                 'author': author,
@@ -123,27 +150,34 @@ def upload_named_entity(names: Iterable[str], table, table_query_index: str, ima
     return name_to_ids
 
 
-def upload_essays(essays_data, dynamodb_resource):
-    table = dynamodb_resource.Table(aws_secret.ESSAY_TABLE_NAME)
+def upload_authored_items(data, table, index_name):
+    name_author_to_ids = {}
 
-    for essay in essays_data:
+    for d in data:
         response = table.query(
-            IndexName='byEssayNameAndAuthor',
-            KeyConditionExpression=boto3.dynamodb.conditions.Key('name').eq(essay['name']) & (
-                boto3.dynamodb.conditions.Key('authorId').eq(essay['authorId'])),
+            IndexName=index_name,
+            KeyConditionExpression=boto3.dynamodb.conditions.Key('name').eq(d['name']) & (
+                boto3.dynamodb.conditions.Key('authorId').eq(d['authorId'])),
         )
         if 'Items' not in response or len(response['Items']) == 0:
-            essay['createdAt'] = get_current_time_aws_format()
-            essay['updatedAt'] = get_current_time_aws_format()
-            print('Putting new essay: ', essay['name'])
-            table.put_item(Item=essay)
+            d['id'] = str(uuid.uuid4())
+            d['createdAt'] = get_current_time_aws_format()
+            d['updatedAt'] = get_current_time_aws_format()
+            print('Putting new authored item: ', d['name'])
+            table.put_item(Item=d)
+        else:
+            d['id'] = response['Items'][0]['id']
+        name_author_to_ids[(d['name'], d['authorId'])] = d['id']
+    
+    return name_author_to_ids
 
 
 if __name__ == '__main__':
     args = parser.parse_args()
     audio_dir = args.audio
+    img_dir = args.img
 
-    files, authors, categories, albums = get_audio_files(audio_dir=audio_dir, voices=args.voices.split(','))
+    files, authors, categories, albums_to_category_author = get_audio_files(audio_dir=audio_dir, voices=args.voices.split(','))
     upload_files_data = [
         {
             'file_name': os.path.join(*filter(
@@ -153,8 +187,20 @@ if __name__ == '__main__':
             'file_type': 'audio/xwav'
         } for file in files
     ]
+
+    author_imgs_data, album_imgs_data, essay_imgs_data = get_image_files(dir=img_dir)
+
     print('Uploading audio to S3...')
     file_urls = upload_s3(aws_secret.S3_BUCKET_NAME, upload_files_data, overwrite=args.overwrite)
+
+    print('Uploading images to S3...')
+    author_image_urls = upload_s3(aws_secret.S3_BUCKET_NAME, author_imgs_data, overwrite=args.overwrite)
+    album_image_urls = upload_s3(aws_secret.S3_BUCKET_NAME, album_imgs_data, overwrite=args.overwrite)
+    essay_image_urls = upload_s3(aws_secret.S3_BUCKET_NAME, essay_imgs_data, overwrite=args.overwrite)
+
+    author_to_img_url = {d['file_name'].split('/')[-1].split('.')[0]: u for d, u in zip(author_imgs_data, author_image_urls)}
+    album_to_img_url = {d['file_name'].split('/')[-1].split('.')[0]: u for d, u in zip(album_imgs_data, album_image_urls)}
+    essay_to_img_url = {d['file_name'].split('/')[-1].split('.')[0]: u for d, u in zip(essay_imgs_data, essay_image_urls)}
 
     print('Uploading to dynamodb...')
     dynamodb_resource = boto3.resource(
@@ -172,27 +218,32 @@ if __name__ == '__main__':
         authors,
         dynamodb_resource.Table(aws_secret.AUTHOR_TABLE_NAME),
         'byAuthorName',
-        [aws_secret.TEMP_IMAGE_URI] * len(authors))
+        [author_to_img_url[a] if a in author_to_img_url else aws_secret.DEFAULT_AUTHOR_IMAGE_URI for a in authors])
 
-    album_names_to_ids = upload_named_entity(
-        albums,
-        dynamodb_resource.Table(aws_secret.ALBUM_TABLE_NAME),
-        'byEssayAlbumName',
-        [aws_secret.TEMP_IMAGE_URI] * len(albums))
+    albums_data = []
+    for i, (album, (category, author)) in enumerate(albums_to_category_author.items()):
+        albums_data.append({
+            'name': album,
+            'imageUri': album_to_img_url[f'{author}---{album}'],
+            'authorId': author_names_to_ids[author],
+            'essayCategoryId': category_names_to_ids[category],
+        })
+    album_author_to_ids = upload_authored_items(albums_data, dynamodb_resource.Table(aws_secret.ALBUM_TABLE_NAME), 'byAlbumNameAndAuthor')
     
     essays_data = []
-    for i, file_dict in enumerate(files):
+    for i, f in enumerate(files):
         # Temporary hack to only upload lj
-        if file_dict['voice'] != 'lj':
+        if f['voice'] != 'lj':
             continue
+        author_id = author_names_to_ids[f['author']]
         essays_data.append({
             'id': str(uuid.uuid4()),
-            'name': file_dict['name'],
-            'imageUri': aws_secret.TEMP_IMAGE_URI,
+            'name': f['name'],
+            'imageUri': essay_to_img_url[f"{f['author']}---{f['album'] if f['album'] else _NO_ALBUM_DEFAULT}---{f['name']}"],
             'audioUri': file_urls[i],
-            'authorId': author_names_to_ids[file_dict['author']],
-            'essayCategoryId': category_names_to_ids[file_dict['category']],
-            'essayAlbumId': album_names_to_ids[file_dict['album']] if file_dict['album'] else 'NO_ALBUM',
+            'authorId': author_id,
+            'essayCategoryId': category_names_to_ids[f['category']],
+            'essayAlbumId': album_author_to_ids[(f['album'], author_id)] if f['album'] else _NO_ALBUM_DEFAULT,
         })
 
-    upload_essays(essays_data, dynamodb_resource)
+    upload_authored_items(essays_data, dynamodb_resource.Table(aws_secret.ESSAY_TABLE_NAME), 'byEssayNameAndAuthor')
