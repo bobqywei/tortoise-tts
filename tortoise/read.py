@@ -5,12 +5,10 @@ from time import time
 
 import torch
 import torchaudio
-import whisper
 
 from api import TextToSpeech, MODELS_DIR
 from utils.audio import load_audio, load_voices
 from utils.text import split_and_recombine_text
-from scripts.stt import check_texts_approx_match
 from scripts.file_utils import get_leaf_files
 
 parser = argparse.ArgumentParser()
@@ -18,7 +16,6 @@ parser.add_argument('--textdir', type=str, help='A dir containing the texts to r
 parser.add_argument('--voice', type=str, help='Selects the voice to use for generation. See options in voices/ directory (and add your own!) '
                                                 'Use the & character to join two voices together. Use a comma to perform inference on multiple voices.', default='pat')
 parser.add_argument('--outdir', type=str, help='Where to store outputs.', default='results/')
-parser.add_argument('--candidates', type=int, help='How many output candidates to produce per-voice. Only the first candidate is actually used in the final product, the others can be used manually.', default=1)
 parser.add_argument('--fix', help='Enable failure fixing mode.', default=False, action='store_true')
 parser.add_argument('--qa', help='Enable QA with stt.', default=False, action='store_true')
 
@@ -40,8 +37,6 @@ if __name__ == '__main__':
     selected_voices = args.voice.split(',')
 
     use_stt = args.qa or args.fix
-    if use_stt:
-        stt = whisper.load_model("large-v2")
 
     if args.textdir is not None:
         text_paths = [p for p in get_leaf_files(args.textdir) if p.endswith('.txt')]
@@ -62,9 +57,9 @@ if __name__ == '__main__':
     generated_files_list_path = os.path.join(args.outdir, 'generated.txt')
     if os.path.exists(generated_files_list_path):
         with open(generated_files_list_path, 'r') as f:
-            generated = set(f.readlines())
+            generated_files_list = set(f.readlines())
     else:
-        generated = set()
+        generated_files_list = set()
 
     textfiles_count = 0
     for textdir_tuple, textfiles in textdirs_to_files_map.items():
@@ -107,7 +102,7 @@ if __name__ == '__main__':
                 if not regenerate and os.path.exists(combined_path):
                     print(f'Skipping {filename} because combined.wav already exists.')
                     continue
-                elif not regenerate and combined_path.replace(args.outdir, '') in generated:
+                elif not regenerate and combined_path.replace(args.outdir, '') in generated_files_list:
                     print(f'Skipping {filename} because already marked as generated.')
                     continue
 
@@ -133,29 +128,20 @@ if __name__ == '__main__':
                     with open(os.path.join(audio_dir, f'{segment_index}.txt'), 'w') as f:
                         f.write(text)
 
-                    generated = tts.tts_with_preset(text, voice_samples=voice_samples, conditioning_latents=conditioning_latents,
-                                                    preset=args.preset, k=args.candidates, use_deterministic_seed=seed)
-                    if args.candidates == 1:
-                        generated = [generated]
+                    candidates = 10 if args.fix else 1
+                    generated, stt_result = tts.tts_with_preset(text, voice_samples=voice_samples, conditioning_latents=conditioning_latents,
+                                                    preset=args.preset, k=candidates, use_deterministic_seed=seed, use_stt_check=use_stt)
+                    generated = generated.squeeze(0).cpu()
+                    torchaudio.save(wav_path, generated, 24000)
+                    if use_stt:
+                        # Save the sentence timestamps
+                        with open(os.path.join(audio_dir, f'{segment_index}.timestamps'), "w") as f:
+                            for segment in stt_result['segments']:
+                                f.write(f"{segment['start']}-{segment['end']}: {segment['text']}\n")
 
-                    passed = False
-                    for g in generated:
-                        gen = g.squeeze(0).cpu()
-                        torchaudio.save(wav_path, gen, 24000)
-                        if use_stt:
-                            result = stt.transcribe(wav_path)
-                            # Save the sentence timestamps
-                            with open(os.path.join(audio_dir, f'{segment_index}.timestamps'), "w") as f:
-                                for segment in result['segments']:
-                                    f.write(f"{segment['start']}-{segment['end']}: {segment['text']}\n")
-                            # QA with stt results
-                            if check_texts_approx_match(text, result['text'].strip()):
-                                passed = True
-                                break
-
-                    all_parts.append(gen)
-                    if use_stt and not passed:
-                        failed[str(segment_index)] = (text, result['text'].strip())
+                    all_parts.append(generated)
+                    if use_stt and 'passed' not in stt_result:
+                        failed[str(segment_index)] = (text, stt_result['text'].strip())
 
                 # Save the clip ids that failed speech-to-text test
                 if use_stt:

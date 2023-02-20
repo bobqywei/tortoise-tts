@@ -8,6 +8,7 @@ import torch
 import torch.nn.functional as F
 import progressbar
 import torchaudio
+import whisper
 
 from tortoise.models.classifier import AudioMiniEncoderWithClassifierHead
 from tortoise.models.diffusion_decoder import DiffusionTts
@@ -23,6 +24,7 @@ from tortoise.utils.audio import wav_to_univnet_mel, denormalize_tacotron_mel
 from tortoise.utils.diffusion import SpacedDiffusion, space_timesteps, get_named_beta_schedule
 from tortoise.utils.tokenizer import VoiceBpeTokenizer
 from tortoise.utils.wav2vec_alignment import Wav2VecAlignment
+from tortoise.scripts.stt import check_texts_approx_match
 
 pbar = None
 
@@ -250,6 +252,8 @@ class TextToSpeech:
         self.rlg_auto = None
         self.rlg_diffusion = None
 
+        self.stt = None
+
     def load_cvvp(self):
         """Load CVVP model."""
         self.cvvp = CVVP(model_dim=512, transformer_heads=8, dropout=0, mel_codes=8192, conditioning_enc_depth=8, cond_mask_percentage=0,
@@ -335,6 +339,7 @@ class TextToSpeech:
             cvvp_amount=.0,
             # diffusion generation parameters follow
             diffusion_iterations=100, cond_free=True, cond_free_k=2, diffusion_temperature=1.0,
+            use_stt_check=False,
             **hf_generate_kwargs):
         """
         Produces an audio clip of the given text being spoken with the given reference voice.
@@ -471,6 +476,12 @@ class TextToSpeech:
             if verbose:
                 print("Transforming autoregressive outputs into audio..")
             wav_candidates = []
+            stt_results = None
+            if use_stt_check and self.stt is None:
+                self.stt = whisper.load_model("large-v2")
+
+            if use_stt_check:
+                self.stt = self.stt.to(self.device)
             self.diffusion = self.diffusion.to(self.device)
             self.vocoder = self.vocoder.to(self.device)
             for b in range(best_results.shape[0]):
@@ -491,7 +502,18 @@ class TextToSpeech:
                 mel = do_spectrogram_diffusion(self.diffusion, diffuser, latents, diffusion_conditioning,
                                                temperature=diffusion_temperature, verbose=verbose)
                 wav = self.vocoder.inference(mel)
-                wav_candidates.append(wav.cpu())
+                wav_candidates.append(wav)
+                if use_stt_check:
+                    stt_results = self.stt.transcribe(torch.flatten(wav))
+                    transcribed_text = stt_results['text'].strip()
+                    print(f"STT: {transcribed_text}")
+                    if check_texts_approx_match(text, transcribed_text):
+                        stt_results['passed'] = True
+                        break
+
+            if use_stt_check:
+                wav_candidates = wav_candidates[-1:] if 'passed' in stt_results and stt_results['passed'] else wav_candidates[:1]
+                self.stt = self.stt.cpu()
             self.diffusion = self.diffusion.cpu()
             self.vocoder = self.vocoder.cpu()
 
@@ -509,7 +531,7 @@ class TextToSpeech:
             if return_deterministic_state:
                 return res, (deterministic_seed, text, voice_samples, conditioning_latents)
             else:
-                return res
+                return res, stt_results
 
     def deterministic_state(self, seed=None):
         """
