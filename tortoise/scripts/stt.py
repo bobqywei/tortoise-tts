@@ -5,7 +5,7 @@ import re
 
 import whisper
 
-from .file_utils import has_subdirectories
+from scripts.file_utils import has_subdirectories
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--audio', type=str, help='A dir containing the result audio to qa test.', default=None)
@@ -26,6 +26,10 @@ if __name__ == '__main__':
         model = whisper.load_model("large-v2")
 
         for leaf_dir in leaf_dirs:
+            if os.path.exists(os.path.join(leaf_dir, 'fails')):
+                print(f"Skipping {leaf_dir}")
+                continue
+
             print(f"Testing {leaf_dir}")
             incorrect = {}
 

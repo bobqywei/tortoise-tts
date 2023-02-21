@@ -77,14 +77,16 @@ def get_audio_files(
                 continue
 
             filename = dirs[-1].split('---')[0]
-            category = dirs[category_dir_idx].split('---')[1]
+            category = dirs[category_dir_idx].split('---')[-1]
             author = dirs[category_dir_idx - 2]
 
             album = None
+            album_index = None
             # Albums contain the category name one level up in the directory structure.
             # Standalone essays contain the category name in the essay name itself.
             if category_dir_idx < len(dirs) - 1:
                 album = dirs[category_dir_idx].split('---')[0]
+                album_index = int(dirs[-1].split('---')[-1])
                 if not album in albums:
                     albums[album] = (category, author)
 
@@ -95,6 +97,7 @@ def get_audio_files(
                 'name': filename,
                 'album': album,
                 'file_path': os.path.join(root, file),
+                'album_index': album_index,
             })
             authors.add(author)
             categories.add(category)
@@ -178,15 +181,12 @@ if __name__ == '__main__':
     img_dir = args.img
 
     files, authors, categories, albums_to_category_author = get_audio_files(audio_dir=audio_dir, voices=args.voices.split(','))
-    upload_files_data = [
-        {
-            'file_name': os.path.join(*filter(
-                lambda x: x is not None,
-                ['public/audio', file['author'], file['voice'], file['album'], file['name'] + '.wav'])),
-            'file_path': file['file_path'],
-            'file_type': 'audio/xwav'
-        } for file in files
-    ]
+    upload_files_data = [{
+        'file_name': os.path.join(*map(str, filter(
+            lambda x: x is not None,
+            ['public/audio', file['author'], file['voice'], file['album'], file['album_index'], file['name'] + '.wav']))),
+        'file_path': file['file_path'],
+        'file_type': 'audio/xwav'} for file in files]
 
     author_imgs_data, album_imgs_data, essay_imgs_data = get_image_files(dir=img_dir)
 
@@ -226,7 +226,7 @@ if __name__ == '__main__':
             'name': album,
             'imageUri': album_to_img_url[f'{author}---{album}'],
             'authorId': author_names_to_ids[author],
-            'essayCategoryId': category_names_to_ids[category],
+            'categoryId': category_names_to_ids[category],
         })
     album_author_to_ids = upload_authored_items(albums_data, dynamodb_resource.Table(aws_secret.ALBUM_TABLE_NAME), 'byAlbumNameAndAuthor')
     
@@ -239,11 +239,16 @@ if __name__ == '__main__':
         essays_data.append({
             'id': str(uuid.uuid4()),
             'name': f['name'],
-            'imageUri': essay_to_img_url[f"{f['author']}---{f['album'] if f['album'] else _NO_ALBUM_DEFAULT}---{f['name']}"],
+            'imageUri': essay_to_img_url['---'.join(map(str, filter(lambda x: x, [
+                f['author'],
+                f['album'] if f['album'] else _NO_ALBUM_DEFAULT,
+                f['name'],
+            ])))],
             'audioUri': file_urls[i],
             'authorId': author_id,
             'essayCategoryId': category_names_to_ids[f['category']],
             'essayAlbumId': album_author_to_ids[(f['album'], author_id)] if f['album'] else _NO_ALBUM_DEFAULT,
+            'albumIndex': f['album_index'] if f['album_index'] else -1,
         })
 
     upload_authored_items(essays_data, dynamodb_resource.Table(aws_secret.ESSAY_TABLE_NAME), 'byEssayNameAndAuthor')
